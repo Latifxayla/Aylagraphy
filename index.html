@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aylagraphy | Ästhetische Fotografie</title>
+  <title>Aylagraphy | Startseite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,110 +12,57 @@
 <body>
   <header class="site-header">
     <div class="navbar" id="navbar">
-      <div class="brand">Aylagraphy</div>
-      <nav>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">Über uns</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Kontakt</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="blog.html">Blog</a>
       </nav>
+      <a class="logo" href="index.html" aria-label="Aylagraphy Logo">
+        <img src="assets/logo.svg" alt="Aylagraphy Monogramm">
+      </a>
+      <div class="nav-actions">
+        <a class="ghost-button" href="kontakt.html">Kontakt</a>
+        <a class="button" href="anfrage.html">Anfrage senden</a>
+      </div>
     </div>
+
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">Ästhetische Hochzeits- & Porträtfotografie</p>
-        <h1>Eure Geschichte in eleganten Bildern</h1>
-        <p class="lede">Zeitlose Momente, festgehalten mit Liebe zum Detail und einem Gefühl für natürliche Schönheit.</p>
-        <div class="hero-actions">
-          <a class="button" href="#portfolio">Zum Portfolio</a>
-          <a class="ghost-button" href="#contact">Anfrage stellen</a>
-        </div>
+        <p class="eyebrow">Elegant & Zeitlos</p>
+        <h1>Capturing Moments, Creating Memories</h1>
+        <p class="lede">Feine, helle Bildwelten mit einem Hauch Pastell – für Paare, Familien und all jene, die sich nach natürlicher Eleganz sehnen.</p>
       </div>
     </section>
   </header>
 
   <main>
-    <section class="highlight" id="portfolio">
-      <div class="highlight-content">
-        <p class="eyebrow">Eindrucksvolle Erinnerungen</p>
-        <h2>Ein Blick in unsere Arbeiten</h2>
-        <p class="lede">Ob intime Elopements, elegante Standesamt-Momente oder stilvolle Paarshootings – wir gestalten jede Serie mit Sinn für Licht, Farbe und Emotion.</p>
-        <div class="highlight-gallery">
-          <div class="highlight-image-frame">
-            <img id="highlight-image" src="https://images.unsplash.com/photo-1524255684952-d7185b509571?auto=format&fit=crop&w=1200&q=80" alt="Beispielhafte Hochzeitsfotografie">
-          </div>
-          <div class="image-bullets" id="image-bullets"></div>
-        </div>
-        <div class="list-grid">
-          <div>
-            <h3>Reportagen</h3>
-            <p>Von der stillen Vorbereitung bis zum letzten Tanz – wir erzählen eure Geschichte in ruhigen, authentischen Sequenzen.</p>
-          </div>
-          <div>
-            <h3>Porträts</h3>
-            <p>Elegante Portraits, die Persönlichkeit zeigen und eine Verbindung schaffen – für Paare, Familien und Solosessions.</p>
-          </div>
-          <div>
-            <h3>Destination</h3>
-            <p>Wir begleiten euch dorthin, wo eure Liebe zuhause ist – ob verwunschene Gärten, historische Städte oder ferne Küsten.</p>
-          </div>
+    <section class="story-stack">
+      <div class="story-card">
+        <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83?auto=format&fit=crop&w=1400&q=80" alt="Paar im Gegenlicht">
+        <div class="story-overlay">
+          <p class="eyebrow">Memorable Moments</p>
+          <h2>Jede Geschichte verdient Zärtlichkeit</h2>
+          <p>Wir halten den leisen Blick, das Lachen und die Gesten fest, die eure Verbindung einzigartig machen.</p>
         </div>
       </div>
-    </section>
 
-    <section class="split" id="about">
-      <div class="split-media">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Fotografenpaar bei der Arbeit">
+      <div class="story-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Brautpaar am Meer">
+        <div class="story-overlay">
+          <p class="eyebrow">Gentle Light</p>
+          <h2>Pastellige Ruhe in jedem Bild</h2>
+          <p>Feines Licht, sanfte Farben und ein Gefühl von Leichtigkeit formen unsere Bildsprache.</p>
+        </div>
       </div>
-      <div class="split-text">
-        <p class="eyebrow">Über uns</p>
-        <h2>Ästhetik, die sich natürlich anfühlt</h2>
-        <p>Wir sind Aylagraphy – ein Team, das Geschichten in Bildern denkt. Mit ruhigen Farben, zarten Kontrasten und einem Gefühl für kleine Gesten gestalten wir Serien, die ihr noch Jahre später gerne anschaut.</p>
-        <ul class="detail-list">
-          <li>Feingefühl für authentische Momente</li>
-          <li>Leichtes, helles Farbkonzept mit zeitlosen Akzenten</li>
-          <li>Persönliche Beratung von der Idee bis zum fertigen Album</li>
-        </ul>
-      </div>
-    </section>
 
-    <section class="blog" id="blog">
-      <div class="blog-header">
-        <p class="eyebrow">Journal</p>
-        <h2>Aktuelles & Inspiration</h2>
-        <p class="lede">Ideen für euren Tag, Tipps zur Vorbereitung und Einblicke hinter die Kulissen – ein Ort für alle, die mehr erfahren möchten.</p>
-      </div>
-      <div class="blog-grid">
-        <article class="blog-card">
-          <p class="small-eyebrow">Inspiration</p>
-          <h3>Wie wir Licht lesen</h3>
-          <p>Unsere liebsten Lichtstimmungen für intime Portraits und elegante Hochzeitsreportagen.</p>
-          <a class="text-link" href="#">Mehr erfahren</a>
-        </article>
-        <article class="blog-card">
-          <p class="small-eyebrow">Behind the scenes</p>
-          <h3>Ein Tag mit Aylagraphy</h3>
-          <p>Von der ersten Idee bis zur finalen Bildauswahl – so begleiten wir eure Geschichte.</p>
-          <a class="text-link" href="#">Mehr erfahren</a>
-        </article>
-        <article class="blog-card">
-          <p class="small-eyebrow">Tipps</p>
-          <h3>Gelassen vor der Kamera</h3>
-          <p>Kurze Vorbereitung, lange Wirkung: Tricks für entspannte Sessions mit natürlichem Ausdruck.</p>
-          <a class="text-link" href="#">Mehr erfahren</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="contact-content">
-        <p class="eyebrow">Kontakt</p>
-        <h2>Lasst uns eure Geschichte planen</h2>
-        <p class="lede">Schreibt uns mit euren Vorstellungen – wir melden uns zeitnah, um eure Wünsche zu besprechen und ein individuelles Konzept zu entwickeln.</p>
-        <div class="contact-actions">
-          <a class="button" href="mailto:hallo@aylagraphy.example">hallo@aylagraphy.example</a>
-          <a class="ghost-button" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram öffnen</a>
-          <a class="ghost-button" href="https://wa.me/491234567890" target="_blank" rel="noreferrer">WhatsApp starten</a>
+      <div class="story-card">
+        <img src="https://images.unsplash.com/photo-1519744346366-d4e89eebf524?auto=format&fit=crop&w=1400&q=80" alt="Detailaufnahme eines Brautstraußes">
+        <div class="story-overlay">
+          <p class="eyebrow">Sincere Words</p>
+          <h2>“Wir wollten Bilder, die sich wie Zuhause anfühlen.”</h2>
+          <p>Mit Herz, Ruhe und Auge fürs Detail gestalten wir Erinnerungen, die bleiben.</p>
         </div>
       </div>
     </section>
@@ -125,17 +72,16 @@
     <div class="footer-inner">
       <div>
         <h4>Aylagraphy</h4>
-        <p>Ästhetische Fotografie für Menschen, die Eleganz lieben.</p>
+        <p>Ästhetische Fotografie, inspiriert von zarten Farben und ehrlichen Begegnungen.</p>
       </div>
       <div class="footer-links">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">Über uns</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Kontakt</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="blog.html">Blog</a>
+        <a href="kontakt.html">Kontakt</a>
       </div>
       <div class="footer-meta">
-        <p>Basierend auf eurem gewünschten Beige-Ton & austauschbaren Bildwelten.</p>
-        <p class="small-text">© 2024 Aylagraphy – gefertigt mit Liebe zum Detail.</p>
+        <p class="small-text">Folgt uns auf Instagram oder schreibt uns direkt für eure Anfrage.</p>
       </div>
     </div>
   </footer>

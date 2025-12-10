@@ -1,12 +1,15 @@
-# Aylagraphy Website Entwurf
+# Aylagraphy Startseite
 
-Elegante Onepager-Struktur für Aylagraphy mit austauschbarem Hero-Hintergrund, sticky Navigation und sanfter Bildrotation auf beige hinterlegten Sektionen.
+Elegante Startseite in Oldlace-Grundfarbe mit dunkelgrünen Pastellakzenten, zentriertem Logo in der Navbar und bildstarken Geschichtenkarten.
 
 ## Aufbau
-- **Hero** mit vollflächigem Hintergrundbild (ersten ~45 % der Seite) und überlagerter Navigation.
-- **Portfolio-Highlight** mit wechselndem Bild (alle 4 Sekunden) und Bullet-Navigation.
-- **Über uns**, **Blog/Journal** und **Kontakt** Sektionen, erreichbar über die Navbar.
-- Beige Grundfläche mit serif/sans-serif Typografie für einen eleganten Look.
+- **Sticky Navbar** mit Monogramm in der Mitte, klassischen Seitenlinks (führen auf eigene Seiten) und Aktionen auf der rechten Seite.
+- **Hero-Bereich** über den oberen ~45 % mit austauschbarem Hintergrundbild und dezentem Intro-Text.
+- **Story Cards** auf Oldlace-Hintergrund: großformatige Bilder mit Titeln, Zitaten und Unterzeilen, die sich beim Scrollen unter der Navbar präsentieren.
+- Footer mit Basislinks zu Portfolio, Über uns, Blog und Kontakt.
 
-## Lokale Nutzung
-Öffne einfach `index.html` im Browser. Bilder können über die `url(...)` Einträge in `styles.css` (Hero) sowie die `galleryImages`-URLs in `script.js` ausgetauscht werden.
+## Nutzung & Anpassung
+- Öffne `index.html` im Browser.
+- Ersetze das Hero-Hintergrundbild in `styles.css` in der `.site-header`-Definition.
+- Passe die Story-Bilder direkt in `index.html` innerhalb der `.story-card`-Elemente an.
+- Das Monogramm liegt als `assets/logo.svg` vor und kann bei Bedarf durch das originale Logo ersetzt werden.
