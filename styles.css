@@ -35,16 +35,13 @@ body {
   max-width: 720px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+.hero__logo {
+  max-width: 420px;
+  width: 70%;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.35));
 }
 
 .hero__title {
