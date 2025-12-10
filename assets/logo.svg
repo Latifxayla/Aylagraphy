@@ -1,12 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 563" role="img" aria-label="Aylagraphy AG logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 563" role="img" aria-label="Aylagraphy AG Logo">
   <defs>
     <style>
-      .brand { font-family: 'Brush Script MT', 'Segoe Script', 'Great Vibes', cursive; font-size: 320px; fill: #b5cce2; }
-      .tag { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 56px; letter-spacing: 4px; fill: #b5cce2; }
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@500&display=swap');
+
+      .brand {
+        font-family: 'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive;
+        font-size: 330px;
+        fill: #c7d8ec;
+      }
+
+      .tag {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 56px;
+        letter-spacing: 6px;
+        fill: #c7d8ec;
+      }
     </style>
   </defs>
-  <rect width="2000" height="563" fill="none"/>
-  <text x="50%" y="320" text-anchor="middle" class="brand">AG</text>
+  <rect width="2000" height="563" fill="none" />
+  <text x="50%" y="315" text-anchor="middle" class="brand">AG</text>
   <text x="50%" y="410" text-anchor="middle" class="tag">EST. 2023</text>
-  <text x="50%" y="480" text-anchor="middle" class="tag" aria-label="Tagline">CAPTURING MOMENTS</text>
+  <text x="50%" y="485" text-anchor="middle" class="tag" aria-label="Tagline">CAPTURING MOMENTS</text>
 </svg>
