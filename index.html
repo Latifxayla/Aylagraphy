@@ -10,6 +10,35 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="nav">
+    <div class="nav__brand" aria-label="Aylagraphy">
+      <span class="nav__logo">Aylagraphy</span>
+      <span class="nav__underline" aria-hidden="true"></span>
+    </div>
+    <div class="nav__links" role="list">
+      <a href="#about" role="listitem">Über uns</a>
+      <a href="#portfolio" role="listitem">Portfolio</a>
+      <a href="#kontakt" role="listitem">Kontakt</a>
+    </div>
+    <div class="nav__social" aria-label="Social Media Links">
+      <a href="#" aria-label="TikTok" class="social-icon" title="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M14.5 3c.4 1.6 1.6 2.9 3.2 3.3v3.2c-1.2-.1-2.3-.5-3.3-1.2v6.2c0 3-2.4 5.5-5.5 5.5S3.4 17.5 3.4 14.4 5.9 8.9 9 8.9c.3 0 .6 0 .9.1v3.3c-.3-.1-.6-.1-.9-.1-1.4 0-2.5 1.1-2.5 2.5S7.6 17.2 9 17.2s2.5-1.1 2.5-2.5V3h3z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M7 3h10c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H7c-2.2 0-4-1.8-4-4V7c0-2.2 1.8-4 4-4zm0 2c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H7zm12.3.9a1 1 0 11-2 0 1 1 0 012 0zM12 8.5A3.5 3.5 0 1112 15a3.5 3.5 0 010-6.5zm0 2c-.8 0-1.5.7-1.5 1.5S11.2 13.5 12 13.5s1.5-.7 1.5-1.5S12.8 10.5 12 10.5z"/>
+        </svg>
+      </a>
+      <a href="#kontakt" aria-label="WhatsApp" class="social-icon" title="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2a10 10 0 00-8.8 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 017.4 11.1l-.3.6-.3.6-2.9-.8-.5.1A8 8 0 114 12a8 8 0 018-8zm-3.4 4.8l1.2 3.2c.1.3.3.5.5.6l1.6 1c.2.1.5.1.8.1l1.7-.2c.3 0 .5.3.4.6l-.3 1.3a1 1 0 01-.8.8 6.3 6.3 0 01-5.1-1.2 6.5 6.5 0 01-2.4-4.7 1 1 0 01.8-1.1l1.4-.3c.2 0 .4.1.5.3z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
   <header class="hero">
     <div class="hero__overlay"></div>
     <div class="hero__content">
@@ -39,13 +68,56 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__text">
         <h2>Für Paare, die sich eine ruhige, elegante Bildsprache wünschen.</h2>
         <p>Wir planen gemeinsam eure Wünsche und erschaffen ein Erlebnis, bei dem ihr einfach ihr selbst sein könnt. Ich begleite euch aufmerksam, halte die leisen Momente fest und kreiere eine Galerie voller Zeitlosigkeit.</p>
       </div>
       <div class="about__cta">
         <a class="btn btn--outline" href="#kontakt">Jetzt anfragen</a>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <header class="section-head">
+        <p class="section-eyebrow">Portfolio</p>
+        <h2>Momente voller Gefühl und Ruhe</h2>
+      </header>
+      <div class="portfolio__grid">
+        <figure class="portfolio__item">
+          <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1000&q=80" alt="Braut hält Blumenstrauß" />
+          <figcaption>Feine Details &amp; Texturen</figcaption>
+        </figure>
+        <figure class="portfolio__item">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Brautpaar im Abendlicht" />
+          <figcaption>Leise Momente</figcaption>
+        </figure>
+        <figure class="portfolio__item">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80" alt="Detailaufnahme von Händen" />
+          <figcaption>Zweisamkeit</figcaption>
+        </figure>
+        <figure class="portfolio__item">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=80" alt="Porträt der Braut" />
+          <figcaption>Portraits</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="kontakt" id="kontakt">
+      <div class="kontakt__content">
+        <header class="section-head">
+          <p class="section-eyebrow">Kontakt</p>
+          <h2>Lasst uns eure Geschichte festhalten</h2>
+        </header>
+        <p>Schreibt mir eure Wünsche oder ruft einfach an. Gemeinsam finden wir einen Termin, der zu euch passt und besprechen alle Details.</p>
+        <div class="kontakt__actions">
+          <a class="btn" href="mailto:hallo@aylagraphy.de">E-Mail senden</a>
+          <a class="btn btn--outline" href="tel:+49123456789">Jetzt anrufen</a>
+        </div>
+      </div>
+      <div class="kontakt__images">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Ruhige Landschaft" />
+        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=900&q=80" alt="Detail einer Blume" />
       </div>
     </section>
   </main>
