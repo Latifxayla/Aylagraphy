@@ -10,7 +10,16 @@
   --font-heading: "Playfair Display", "DM Serif Text", serif;
   --font-body: "Inter", "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --nav-height: 82px;
+  --hero-height: 45vh;
 }
+  .feature-carousel {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    margin: -90px auto 120px;
+  }
+
 
 * {
   box-sizing: border-box;
@@ -27,6 +36,21 @@ body {
   min-height: 100vh;
   letter-spacing: 0.01em;
   padding-top: var(--nav-height);
+}
+
+/* Hintergrund nur hinter der Navigationsleiste */
+.page-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Hintergrund soll von Nav bis vor die Content-Section gehen */
+  height: calc(var(--nav-height) + var(--hero-height));
+  z-index: 0;
+  background: url('assets/portfolio/10-IMG_7821.jpg') center no-repeat;
+  background-size: auto; /* nicht flexibel, keine Größenanpassung */
+  opacity: 0.35; /* leicht, damit Inhalt lesbar bleibt */
+  pointer-events: none;
 }
 
 a {
@@ -159,12 +183,55 @@ img {
 
 .hero-shell {
   position: relative;
+  z-index: 1;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid rgba(31,45,36,0.1);
+}
+
+.hero-slider__viewport {
+  width: 100%;
+  height: 360px;
+}
+
+.hero-slider__track {
+  display: flex;
+  gap: 0;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.8s ease;
+  cursor: grab;
+}
+.hero-slider__track.is-dragging { cursor: grabbing; }
+
+.hero-slider__slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background: #111;
+  display: grid;
+  place-items: center;
+}
+
+.hero-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+@media (max-width: 640px) {
+  .hero-slider__viewport { height: 240px; }
 }
 
 .hero {
   position: relative;
-  min-height: 45vh;
-  height: 45vh;
+  min-height: var(--hero-height);
+  height: var(--hero-height);
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -248,7 +315,7 @@ img {
 }
 
 .carousel {
-  width: min(600px, 90vw);
+  width: 300px;
   height: 400px;
   background: #ffffff;
   border: 1px solid rgba(31, 45, 36, 0.15);
@@ -276,8 +343,8 @@ img {
 }
 
 .carousel__slide img {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -305,8 +372,10 @@ img {
 }
 
 .content-stream {
-  background: var(--color-base);
+  background: var(--color-base); /* ensures normal page background below hero */
   padding: 0 0 5rem;
+  position: relative;
+  z-index: 1; /* sit above the fixed backdrop */
 }
 
 .section__header {
@@ -708,6 +777,7 @@ textarea {
   }
 
   .carousel {
+    width: 240px;
     height: 320px;
   }
 
@@ -723,3 +793,20 @@ textarea {
     height: 220px;
   }
 }
+
+/* Slider controls */
+.hero-slider__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 4px;
+}
+.hero-slider__control--prev { left: 8px; }
+.hero-slider__control--next { right: 8px; }
