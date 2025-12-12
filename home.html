@@ -11,67 +11,87 @@
 </head>
 <body class="page" data-page="home">
   <nav class="nav">
-    <div class="nav__brand">
-      <a class="nav__logo" href="home.html">Aylagraphy</a>
-      <span class="nav__tagline">Fine Art Wedding Photography</span>
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <a class="nav__logo" href="home.html">Aylagraphy</a>
+        <span class="nav__tagline">Fine Art Wedding Photography</span>
+      </div>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Menü öffnen</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__links" id="nav-links">
+        <a class="nav__link is-active" href="home.html">Home</a>
+        <a class="nav__link" href="ueber-uns.html">Über uns</a>
+        <a class="nav__link" href="portfolio.html">Portfolio</a>
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link" href="kontakt.html">Kontakt</a>
+      </div>
+      <a class="nav__cta" href="kontakt.html">Anfragen</a>
     </div>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
-      <span class="sr-only">Menü öffnen</span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="nav__links" id="nav-links">
-      <a class="nav__link is-active" href="home.html">Home</a>
-      <a class="nav__link" href="ueber-uns.html">Über uns</a>
-      <a class="nav__link" href="portfolio.html">Portfolio</a>
-      <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
-      <a class="nav__link" href="blog.html">Blog</a>
-      <a class="nav__link" href="kontakt.html">Kontakt</a>
-    </div>
-    <a class="nav__cta" href="kontakt.html">Anfragen</a>
   </nav>
 
-  <header class="hero hero--home">
-    <div class="hero__image" role="presentation"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <p class="eyebrow">Aylagraphy</p>
-      <h1>Feine Hochzeitsfotografie<br>mit Herz &amp; Ruhe</h1>
-      <p class="hero__subtitle">Zeitlose, gefühlvolle Reportagen mit warmen Tönen, poetischem Licht und viel Raum für echte Momente.</p>
-      <div class="hero__actions">
-        <a class="btn" href="kontakt.html">Anfragen</a>
-        <a class="btn btn--ghost" href="portfolio.html">Portfolio</a>
-      </div>
-    </div>
-    <div class="hero__portrait">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Portrait eines Paares in warmem Licht">
-    </div>
-  </header>
-
   <main>
-    <section class="section section--light">
-      <div class="container section__intro">
-        <div class="section__header">
-          <p class="eyebrow">Unser Ansatz</p>
-          <h2><span class="italic">Sanfte</span> Geschichten, liebevoll festgehalten</h2>
-        </div>
-        <div class="split-grid split-grid--two">
-          <div class="stack">
-            <p>Wir glauben an Bilder, die atmen. An zarte Bewegungen, stille Gesten und Momente voller Gefühl. Mit viel Ruhe und einem Blick für Details dokumentieren wir eure Geschichte, damit ihr sie immer wieder neu erleben könnt.</p>
+    <section class="hero-shell">
+      <header class="hero hero--home">
+        <div class="hero__image" role="presentation"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Aylagraphy</p>
+          <h1>Feine Hochzeitsfotografie<br>mit Herz &amp; Ruhe</h1>
+          <p class="hero__subtitle">Zeitlose, gefühlvolle Reportagen mit warmen Tönen, poetischem Licht und viel Raum für echte Momente.</p>
+          <div class="hero__actions">
+            <a class="btn" href="kontakt.html">Anfragen</a>
+            <a class="btn btn--ghost" href="portfolio.html">Portfolio</a>
           </div>
-          <div class="stack">
-            <p>Unsere Arbeitsweise ist unaufdringlich: Wir lassen Raum, beobachten, führen nur sanft, wenn es euch hilft. So entstehen authentische Portraits, die wie von selbst passieren – mit einer Ästhetik, die zeitlos bleibt.</p>
-          </div>
         </div>
-      </div>
+      </header>
+
+      <section class="feature-carousel">
+        <div class="carousel" data-carousel>
+          <div class="carousel__track" data-carousel-track></div>
+          <div class="carousel__dots" data-carousel-dots></div>
+        </div>
+      </section>
     </section>
 
-    <section class="section section--olive">
-      <div class="container experience">
-        <div class="experience__text">
-          <p class="eyebrow">Experience</p>
-          <h2>Eine ruhige Reise zu euren Lieblingsbildern</h2>
+    <section class="content-stream">
+      <article class="module module--split-left">
+        <div class="module__media">
+          <img src="assets/content/content-1.svg" alt="Ein Paar im Abendlicht" loading="lazy">
+        </div>
+        <div class="module__copy">
+          <div class="section__header">
+            <p class="eyebrow">Unser Ansatz</p>
+            <h2>Sanfte Geschichten, liebevoll festgehalten</h2>
+          </div>
+          <p>Wir glauben an Bilder, die atmen. An zarte Bewegungen, stille Gesten und Momente voller Gefühl. Mit viel Ruhe und einem Blick für Details dokumentieren wir eure Geschichte, damit ihr sie immer wieder neu erleben könnt.</p>
+          <p>Unsere Arbeitsweise ist unaufdringlich: Wir lassen Raum, beobachten, führen nur sanft, wenn es euch hilft. So entstehen authentische Portraits, die wie von selbst passieren – mit einer Ästhetik, die zeitlos bleibt.</p>
+        </div>
+      </article>
+
+      <article class="module module--center-image">
+        <div class="module__media">
+          <img src="assets/content/content-2.svg" alt="Detailaufnahme eines Brautkleids" loading="lazy">
+        </div>
+        <div class="module__copy">
+          <h3>Warmes Licht, klare Komposition</h3>
+          <p>Jedes Bild entsteht mit Bedacht: viel Weißraum, ruhige Abstände, ein Fokus auf eure Verbindung. Das Ergebnis ist eine Bildwelt, die sich elegant und natürlich anfühlt.</p>
+        </div>
+      </article>
+
+      <article class="module module--split-right">
+        <div class="module__media">
+          <img src="assets/content/content-3.svg" alt="Brautpaar an einer Küste" loading="lazy">
+        </div>
+        <div class="module__copy">
+          <div class="section__header">
+            <p class="eyebrow">Experience</p>
+            <h2>Eine ruhige Reise zu euren Lieblingsbildern</h2>
+          </div>
           <p>Vom ersten Gespräch bis zur Lieferung eurer Galerie begleiten wir euch mit Klarheit, Empathie und einer feinen, künstlerischen Handschrift.</p>
           <div class="accordion" data-accordion>
             <button class="accordion__item" aria-expanded="false">
@@ -104,38 +124,32 @@
             </div>
           </div>
         </div>
-        <div class="experience__visual">
-          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80" alt="Schwarz-Weiß-Portrait eines Paares">
-        </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="quote">
-      <div class="quote__overlay"></div>
-      <div class="quote__content container">
-        <p class="eyebrow">Worte</p>
-        <blockquote>„Unsere Bilder fühlen sich an wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</blockquote>
-      </div>
-    </section>
+      <article class="module module--overlay">
+        <img class="module__overlay-img" src="assets/content/content-overlay.svg" alt="Feines Hochzeitsdetail" loading="lazy">
+        <div class="module__overlay-copy">
+          <p class="eyebrow">Statement</p>
+          <h3>„Unsere Bilder fühlen sich an wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</h3>
+          <p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p>
+        </div>
+      </article>
 
-    <section class="section section--light">
-      <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Galerie</p>
-          <h2>Ausgewählte Augenblicke</h2>
+      <article class="module module--split-left">
+        <div class="module__media">
+          <img src="assets/content/content-4.svg" alt="Brautpaar zwischen Olivenbäumen" loading="lazy">
         </div>
-        <div class="gallery">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1200&q=80" alt="Braut hält Blumenstrauß">
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Brautpaar im Gegenlicht">
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Portrait der Braut">
-          </figure>
+        <div class="module__copy">
+          <h3>Galerie kleiner Momente</h3>
+          <p>Eine Auswahl an Szenen, die eure Geschichte leise weiter erzählen – ohne harte Schnitte, ohne sichtbare Grenzen.</p>
+          <div class="gallery-row">
+            <img src="assets/content/gallery-1.svg" alt="Paar tanzt" loading="lazy">
+            <img src="assets/content/gallery-2.svg" alt="Detail des Brautstraußes" loading="lazy">
+            <img src="assets/content/gallery-3.svg" alt="Feine Papeterie" loading="lazy">
+            <img src="assets/content/gallery-4.svg" alt="Portrait des Paares" loading="lazy">
+          </div>
         </div>
-      </div>
+      </article>
     </section>
   </main>
 

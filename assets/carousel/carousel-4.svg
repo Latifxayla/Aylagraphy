@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='1066' viewBox='0 0 1600 1066'>
+  <defs>
+    <linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#f9edd7' stop-opacity='0.95'/>
+      <stop offset='50%' stop-color='#d1bfa7' stop-opacity='0.9'/>
+      <stop offset='100%' stop-color='#2c3b32' stop-opacity='0.85'/>
+    </linearGradient>
+    <pattern id='grain' x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse'>
+      <rect width='6' height='6' fill='rgba(0,0,0,0)'/>
+      <circle cx='1' cy='1' r='0.6' fill='rgba(0,0,0,0.08)'/>
+      <circle cx='4' cy='2' r='0.5' fill='rgba(255,255,255,0.08)'/>
+      <circle cx='2' cy='4' r='0.4' fill='rgba(0,0,0,0.05)'/>
+    </pattern>
+  </defs>
+  <rect width='1600' height='1066' fill='url(#grad)'/>
+  <rect width='1600' height='1066' fill='url(#grain)' opacity='0.35'/>
+  <rect x='32' y='32' width='1536' height='1002' fill='rgba(31,45,36,0.38)'/>
+  <text x='50%' y='48%' text-anchor='middle' fill='#fdf5e6' font-family="Playfair Display, Georgia, serif" font-size='64' letter-spacing='3' style='text-transform:uppercase'>Carousel</text>
+  <text x='50%' y='58%' text-anchor='middle' fill='#fdf5e6' font-family="Inter, Arial, sans-serif" font-size='32'>Soft Focus</text>
+</svg>
