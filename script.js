@@ -1,24 +1,31 @@
-const slider = document.querySelector('.auto-slider');
-const slides = slider ? Array.from(slider.querySelectorAll('.slide')) : [];
-const rotationDelay = 5000;
-let currentIndex = 0;
+const navToggle = document.querySelector('.nav__toggle');
+const navLinks = document.querySelector('.nav__links');
+const accordionGroups = document.querySelectorAll('[data-accordion]');
 
-function showSlide(index) {
-  slides.forEach((slide, idx) => {
-    slide.classList.toggle('active', idx === index);
+function closeNavOnResize() {
+  if (window.innerWidth > 880) {
+    navLinks?.classList.remove('is-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }
+}
+
+navToggle?.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+window.addEventListener('resize', closeNavOnResize);
+
+accordionGroups.forEach((group) => {
+  const triggers = group.querySelectorAll('.accordion__item');
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      const panel = trigger.nextElementSibling;
+      if (panel && panel.classList.contains('accordion__panel')) {
+        panel.hidden = expanded;
+      }
+    });
   });
-}
-
-function startSlider() {
-  if (slides.length <= 1) return;
-
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, rotationDelay);
-}
-
-if (slides.length) {
-  showSlide(currentIndex);
-  startSlider();
-}
+});

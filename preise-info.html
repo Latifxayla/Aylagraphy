@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preise &amp; Info | Aylagraphy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page" data-page="preise">
+  <nav class="nav">
+    <div class="nav__brand">
+      <a class="nav__logo" href="home.html">Aylagraphy</a>
+      <span class="nav__tagline">Fine Art Wedding Photography</span>
+    </div>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+      <span class="sr-only">Menü öffnen</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav__links" id="nav-links">
+      <a class="nav__link" href="home.html">Home</a>
+      <a class="nav__link" href="ueber-uns.html">Über uns</a>
+      <a class="nav__link" href="portfolio.html">Portfolio</a>
+      <a class="nav__link is-active" href="preise-info.html">Preise &amp; Info</a>
+      <a class="nav__link" href="blog.html">Blog</a>
+      <a class="nav__link" href="kontakt.html">Kontakt</a>
+    </div>
+    <a class="nav__cta" href="kontakt.html">Anfragen</a>
+  </nav>
+
+  <header class="hero hero--soft">
+    <div class="hero__image hero__image--prices" role="presentation"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="eyebrow">Preise &amp; Info</p>
+      <h1>Zarte Reportagen, klare Pakete</h1>
+      <p class="hero__subtitle">Transparente Angebote mit viel Raum für eure Wünsche und individuelle Feinabstimmung.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--light">
+      <div class="container section__intro">
+        <div class="section__header">
+          <p class="eyebrow">Pakete</p>
+          <h2>Wählt das Gefühl, wir gestalten die Story</h2>
+          <p>Jedes Paket enthält unsere Beratung, Begleitung in ruhigem Stil, liebevolle Nachbearbeitung und eine kuratierte Online-Galerie.</p>
+        </div>
+        <div class="split-grid split-grid--three pricing">
+          <div class="card">
+            <p class="card__eyebrow">Couples</p>
+            <h3>EUR 690</h3>
+            <p>1,5 Stunden Session · 40+ fein bearbeitete Bilder · Moodboard &amp; Location-Guide.</p>
+          </div>
+          <div class="card card--accent">
+            <p class="card__eyebrow">Intimate Weddings</p>
+            <h3>ab EUR 2.400</h3>
+            <p>6 Stunden Reportage · Storytelling-Galerie · Preview innerhalb 72h · feine Prints optional.</p>
+          </div>
+          <div class="card">
+            <p class="card__eyebrow">Elopements</p>
+            <h3>ab EUR 1.800</h3>
+            <p>4 Stunden Begleitung · maßgeschneiderter Ablauf · dezentes Posing-Coaching, wenn gewünscht.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--olive faq">
+      <div class="container section__intro">
+        <div class="section__header">
+          <p class="eyebrow">FAQ</p>
+          <h2>Antworten auf eure Fragen</h2>
+          <p>Wenn ihr mehr wissen möchtet, meldet euch gern jederzeit – wir lieben Austausch.</p>
+        </div>
+        <div class="accordion" data-accordion>
+          <button class="accordion__item" aria-expanded="false">
+            <span>Wie schnell erhalten wir eine Vorschau?</span>
+            <span class="accordion__chevron">›</span>
+          </button>
+          <div class="accordion__panel" hidden>Innerhalb von 72 Stunden erhaltet ihr eine handverlesene Preview, damit ihr den Tag noch einmal nachfühlen könnt.</div>
+
+          <button class="accordion__item" aria-expanded="false">
+            <span>Bietet ihr Alben an?</span>
+            <span class="accordion__chevron">›</span>
+          </button>
+          <div class="accordion__panel" hidden>Ja, wir gestalten minimalistische Fine-Art-Alben auf Baumwollpapier, die eure Geschichte würdigen.</div>
+
+          <button class="accordion__item" aria-expanded="false">
+            <span>Reist ihr europaweit?</span>
+            <span class="accordion__chevron">›</span>
+          </button>
+          <div class="accordion__panel" hidden>Gern. Wir kalkulieren Anreise transparent und planen mit euch die beste Tageslicht-Route.</div>
+        </div>
+        <div class="faq__cta">
+          <a class="btn" href="kontakt.html">Lasst uns sprechen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">Aylagraphy</div>
+      <div class="footer__links">
+        <a href="instagram.com" aria-label="Instagram">Instagram</a>
+        <a href="mailto:hallo@aylagraphy.de">Mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
