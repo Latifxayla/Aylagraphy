@@ -1,11 +1,11 @@
 const navToggle = document.querySelector('.nav__toggle');
-const navLinks = document.querySelector('.nav__links');
+const navLinksGroups = document.querySelectorAll('.nav__links');
 const accordionGroups = document.querySelectorAll('[data-accordion]');
 const navBar = document.querySelector('.nav');
 
 function closeNavOnResize() {
   if (window.innerWidth > 960) {
-    navLinks?.classList.remove('is-open');
+    navLinksGroups.forEach((g) => g.classList.remove('is-open'));
     navToggle?.setAttribute('aria-expanded', 'false');
   }
 }
@@ -16,8 +16,13 @@ function handleNavScroll() {
 }
 
 navToggle?.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
+  // Toggle all link groups for mobile
+  let nextState = true;
+  // Determine next state based on first group
+  const first = navLinksGroups[0];
+  if (first) nextState = !first.classList.contains('is-open');
+  navLinksGroups.forEach((g) => g.classList.toggle('is-open', nextState));
+  navToggle.setAttribute('aria-expanded', String(nextState));
 });
 
 window.addEventListener('resize', closeNavOnResize);
