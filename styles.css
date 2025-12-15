@@ -420,9 +420,9 @@ img {
   display: grid;
   gap: 1.5rem;
   align-items: center;
-  margin: 0 auto;
-  padding: 3.5rem 0;
-  width: min(1200px, calc(100% - 3rem));
+  margin: 0;
+  padding: 3.5rem 1.5rem;
+  width: 100%;
   border-top: 1px solid var(--color-soft);
 }
 
@@ -454,6 +454,12 @@ img {
   gap: 2rem;
 }
 
+.module--split-left .module__media,
+.module--split-right .module__media {
+  height: 380px;
+  overflow: hidden;
+}
+
 .module--split-right .module__media {
   order: 2;
 }
@@ -468,29 +474,46 @@ img {
 }
 
 .module--center-image .module__media {
-  max-width: 840px;
+  max-width: 100%;
   justify-self: center;
-  height: 420px;
+  height: 650px;
 }
 
 .module--overlay {
   position: relative;
   grid-template-columns: 1fr;
+  background: var(--color-accent);
+  overflow: hidden;
+}
+
+.module--overlay-secondary {
+  background: #cdc0b0;
 }
 
 .module__overlay-img {
-  height: 520px;
+  height: 580px;
+  opacity: 0.32;
+  object-fit: cover;
 }
 
 .module__overlay-copy {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #FFFFFF;
   display: grid;
   align-content: center;
+  justify-items: center;
   gap: 1rem;
   padding: 2.5rem;
+  color: #FFFFFF;
+}
+
+.module__overlay-copy > * {
+  background: none;
+  color: inherit;
+  width: min(90%, 760px);
+  display: grid;
+  gap: 1rem;
+  text-align: center;
 }
 
 .module__overlay-copy h3 {
@@ -500,14 +523,15 @@ img {
 
 .gallery-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery-row img {
   width: 100%;
-  height: 280px;
+  height: 380px;
   object-fit: cover;
+  display: block;
 }
 
 .callout {
@@ -573,10 +597,11 @@ img {
 .section--olive,
 .section--callout {
   background: var(--color-base);
-  padding: 4rem 0;
+  padding: 4rem 1.5rem;
   margin: 0;
   border: none;
   box-shadow: none;
+  width: 100%;
 }
 
 .split-grid {
@@ -599,6 +624,32 @@ img {
 
 .stack--gap {
   gap: 1.2rem;
+}
+
+/* Services List - Alternative zu Accordion */
+.services-list {
+  display: grid;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.service-item {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.service-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
 }
 
 .accordion {
@@ -637,19 +688,21 @@ img {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery figure {
   background: #fff;
   border: 1px solid var(--color-soft);
+  overflow: hidden;
 }
 
 .gallery img {
   width: 100%;
-  height: 320px;
+  height: 420px;
   object-fit: cover;
+  display: block;
 }
 
 .quote {
