@@ -7,10 +7,29 @@
   --color-contrast: #f7efe1;
   --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.12);
   --shadow-faint: 0 12px 30px rgba(0, 0, 0, 0.08);
-  --font-heading: "Playfair Display", "DM Serif Text", serif;
+  --font-heading: "Cormorant Garamond", "Playfair Display", serif;
   --font-body: "Inter", "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --nav-height: 95px;
   --hero-height: 45vh;
+}
+
+/* Cormorant Garamond Light CAPS für elegante Überschriften */
+h1, h2, h3, h4, h5, h6,
+.nav__logo,
+.hero h1,
+.section__header h2,
+.module__copy h3,
+.module__overlay-copy h3,
+.service-item h4,
+.value-card__title {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* CAPS für Hauptüberschriften */
+h1, h2, h3, .nav__logo {
+  text-transform: uppercase;
 }
   .feature-carousel {
     position: relative;
@@ -259,7 +278,7 @@ img {
 .hero__image {
   position: absolute;
   inset: 0;
-  background: url('assets/hero/hero-placeholder.svg') center/cover no-repeat;
+  background: url('assets/portfolio/22-IMG_4369.jpg') center/cover no-repeat;
 }
 
 .hero__overlay {
@@ -437,6 +456,11 @@ img {
   object-fit: cover;
 }
 
+/* Opt-out for cropping on specific images */
+.module__media img.img--contain {
+  object-fit: contain;
+}
+
 .module__copy {
   display: grid;
   gap: 1rem;
@@ -458,6 +482,14 @@ img {
 .module--split-right .module__media {
   height: 380px;
   overflow: hidden;
+}
+
+/* Taller framed variant for specific modules (keine Bild-Zuschnitte) */
+.module__media.media--tall { height: 520px; }
+.module__media.media--frame {
+  border: 1px solid var(--color-soft);
+  box-shadow: var(--shadow-faint);
+  background: #ffffff;
 }
 
 .module--split-right .module__media {
@@ -525,8 +557,19 @@ img {
   gap: 1rem;
 }
 
+/* Center the Instagram heading and description above the grid */
+.module--embed .section__header {
+  text-align: center;
+}
+
+.module--embed .module__copy > p {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 .insta-link {
-  justify-self: start;
+  justify-self: center;
 }
 
 .insta-grid img {
@@ -849,6 +892,7 @@ textarea {
   .module--split-right .module__media {
     height: 300px;
   }
+  .module__media.media--tall { height: 360px; }
 
   .insta-grid img {
     height: 240px;
@@ -895,6 +939,7 @@ textarea {
   .module--split-right .module__media {
     height: 220px;
   }
+  .module__media.media--tall { height: 260px; }
 
   .insta-grid img {
     height: 160px;
