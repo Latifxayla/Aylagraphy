@@ -46,3 +46,4 @@ accordionGroups.forEach((group) => {
 // (Carousel removed)
 
 // (Hero slider removed)
+
