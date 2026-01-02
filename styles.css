@@ -468,11 +468,11 @@ img {
   gap: 2rem;
 }
 
-.module--split-left .module__media,
-.module--split-right .module__media {
-  height: 380px;
-  overflow: hidden;
-}
+ .module--split-left .module__media,
+ .module--split-right .module__media {
+   height: 380px;
+   overflow: hidden;
+ }
 
 /* Taller framed variant for specific modules (keine Bild-Zuschnitte) */
 .module__media.media--tall { height: 520px; }
