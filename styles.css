@@ -655,6 +655,47 @@ body[data-page="ueber-uns"] .hero__content .eyebrow {
   margin-bottom: 0.5rem;
 }
 
+.values__item {
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+}
+
+.value-image {
+  background: #b7d4ff;
+  border: 2px dashed rgba(15, 31, 51, 0.35);
+  color: #0f1f33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  height: 520px;
+  width: clamp(260px, 70%, 420px);
+}
+
+@media (max-width: 900px) {
+  .value-image {
+    height: 440px;
+    width: clamp(240px, 75%, 360px);
+  }
+}
+
+@media (max-width: 640px) {
+  .value-image {
+    height: 360px;
+    width: 100%;
+  }
+}
+
+.value-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
 .section,
 .section--light,
 .section--olive,
@@ -693,6 +734,16 @@ body[data-page="ueber-uns"] .hero__content .eyebrow {
   color: var(--color-ink);
 }
 
+.section-divider--after-photos {
+  margin-top: 8rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-divider--small {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
 .about-photo-block {
   align-items: center;
 }
@@ -709,6 +760,77 @@ body[data-page="ueber-uns"] .hero__content .eyebrow {
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.photo-overlap {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  display: grid;
+}
+
+.photo-overlap__main,
+.photo-overlap__secondary {
+  background: #b7d4ff;
+  border: 2px dashed rgba(15, 31, 51, 0.35);
+  color: #0f1f33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.photo-overlap__main {
+  height: 520px;
+  width: clamp(260px, 70%, 420px);
+  justify-self: start;
+}
+
+.photo-overlap__secondary {
+  position: absolute;
+  bottom: -30px;
+  right: clamp(-20px, 5vw, 80px);
+  height: 416px;
+  width: clamp(208px, 56%, 336px);
+  transform: translate(40%, 0%);
+  box-shadow: var(--shadow-faint);
+}
+
+@media (max-width: 900px) {
+  .photo-overlap {
+    min-height: 600px;
+  }
+  .photo-overlap__main {
+    height: 440px;
+    width: clamp(240px, 75%, 360px);
+  }
+  .photo-overlap__secondary {
+    height: 352px;
+    width: clamp(192px, 60%, 288px);
+    right: clamp(-24px, 6vw, 70px);
+    bottom: -20px;
+    transform: translate(38%, 0%);
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-overlap {
+    min-height: 520px;
+  }
+  .photo-overlap__main {
+    height: 360px;
+    width: 100%;
+  }
+  .photo-overlap__secondary {
+    position: relative;
+    inset: unset;
+    transform: translate(10%, 18px);
+    width: 80%;
+    height: 288px;
+    justify-self: end;
+  }
 }
 
 .split-grid {
