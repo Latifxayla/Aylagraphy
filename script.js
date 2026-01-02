@@ -43,7 +43,25 @@ accordionGroups.forEach((group) => {
   });
 });
 
-// (Carousel removed)
+function initSeriesSliders() {
+  const sliders = document.querySelectorAll('.series-slider');
+  sliders.forEach((slider) => {
+    const track = slider.querySelector('.series-slider__track');
+    const prev = slider.querySelector('[data-dir="prev"]');
+    const next = slider.querySelector('[data-dir="next"]');
+    if (!track) return;
 
-// (Hero slider removed)
+    const step = () => track.clientWidth;
+
+    prev?.addEventListener('click', () => {
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+
+    next?.addEventListener('click', () => {
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+  });
+}
+
+initSeriesSliders();
 
