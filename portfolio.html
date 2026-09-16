@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Aylagraphy</title>
+  <meta name="description" content="Portfolio von Aylagraphy – ruhige, atmosphärische Hochzeitsreportagen und Galerien voller Gefühl.">
+  <link rel="icon" href="assets/AG_logo_mark_brown.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page" data-page="portfolio">
   <nav class="nav">
     <div class="nav__inner">
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links-left nav-links-right">
         <span class="sr-only">Menü öffnen</span>
         <span></span>
         <span></span>
@@ -22,9 +24,10 @@
         <a class="nav__link" href="home.html">Home</a>
         <a class="nav__link" href="ueber-uns.html">Über uns</a>
         <a class="nav__link is-active" href="portfolio.html">Portfolio</a>
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
-        <a class="nav__logo" href="home.html">Aylagraphy</a>
+        <a class="nav__logo" href="home.html"><span class="nav__logo-mark">AG</span><span class="nav__logo-divider" aria-hidden="true"></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
         <a class="nav__link" href="kontakt.html">Kontakt</a>
@@ -55,28 +58,94 @@
           <p>Jede Galerie ist kuratiert, um euch den Fluss des Tages spüren zu lassen. Viel Weißraum, warme Töne, keine Hektik.</p>
         </div>
       </div>
+      <div class="portfolio-filter" role="tablist" aria-label="Galerie filtern">
+        <button class="portfolio-filter__btn is-active" data-filter="all">Alle</button>
+        <button class="portfolio-filter__btn" data-filter="reportage-1">Reportage 1</button>
+        <button class="portfolio-filter__btn" data-filter="reportage-2">Reportage 2</button>
+        <button class="portfolio-filter__btn" data-filter="reportage-3">Reportage 3</button>
+      </div>
       <div class="container gallery gallery--grid">
-        <img src="assets/portfolio/2-IMG_3777.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/2-IMG_8602.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/10-IMG_7821.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/11-IMG_4185.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/11-IMG_8606.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/12-IMG_4194.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/12-IMG_8608.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/13-IMG_4200.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/13-IMG_7812.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/14-IMG_5444.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/14-IMG_8612.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/15-IMG_5443.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/17-IMG_4254.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/18-IMG_4322.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/19-IMG_4338.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/20-IMG_4344.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/21-IMG_4356.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/22-IMG_4369.jpg" alt="Portfolio Bild" loading="lazy">
-        <img src="assets/portfolio/23-IMG_4378.jpg" alt="Portfolio Bild" loading="lazy">
-        <!-- Weitere Bilder können hier automatisch ergänzt werden -->
+        <img src="assets/portfolio/1-IMG_3758.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/10-IMG_4141.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/11-IMG_4185.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/12-IMG_4194.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/13-IMG_4200.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/14-IMG_5444.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/15-IMG_5443.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/17-IMG_4254.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/18-IMG_4322.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/19-IMG_4338.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/2-IMG_3777.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/20-IMG_4344.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/21-IMG_4356.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/22-IMG_4369.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/23-IMG_4378.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/24-IMG_4386.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/25-IMG_4429.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/26-IMG_4439.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/27-IMG_4450.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/28-IMG_4531.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/29-IMG_4550.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/3-IMG_3781.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/30-IMG_4560.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/31-IMG_4571.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/32-IMG_4588.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/33-IMG_4597.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/34-IMG_4609.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/35-IMG_4610.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/36-IMG_5650.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/4-IMG_3784.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/5-IMG_3840.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/6-IMG_3872.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/7-IMG_4098.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/8-IMG_4100.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/9-IMG_4105.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-1">
+        <img src="assets/portfolio/1-IMG_7875.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/10-IMG_7821.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/11-IMG_8606.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/12-IMG_8608.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/13-IMG_7812.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/14-IMG_8612.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/2-IMG_8602.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/3-IMG_7876.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/4-IMG_7877.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/5-IMG_7829.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/6-IMG_8123.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/7-IMG_7807.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/8-IMG_8121.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/9-IMG_7869.jpg" alt="Portfolio Bild" loading="lazy" data-category="reportage-2">
+        <img src="assets/portfolio/IMG_4454.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4460.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4466.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4499.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4531.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4540.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4550.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4556.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4569.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4573.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4574.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4575.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4615.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4669.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4698.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4699.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4701.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4705.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4712.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4729.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4747.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4774.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4794.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4829.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4859.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4890.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_4951.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_5003.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_5018.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_5336.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
+        <img src="assets/portfolio/IMG_5374.jpeg" alt="Portfolio Bild" loading="lazy" data-category="reportage-3">
       </div>
     </section>
 

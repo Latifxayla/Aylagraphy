@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aylagraphy | Fine Art Wedding Photography</title>
+  <meta name="description" content="Aylagraphy – Fine-Art-Hochzeitsfotografie mit ruhigem, zeitlosem Blick. Couples, Elopements und intime Hochzeiten, weltweit begleitet.">
+  <link rel="icon" href="assets/AG_logo_mark_brown.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page" data-page="home">
   <nav class="nav">
     <div class="nav__inner">
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links-left nav-links-right">
         <span class="sr-only">Menü öffnen</span>
         <span></span>
         <span></span>
@@ -22,9 +24,10 @@
         <a class="nav__link is-active" href="home.html">Home</a>
         <a class="nav__link" href="ueber-uns.html">Über uns</a>
         <a class="nav__link" href="portfolio.html">Portfolio</a>
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
-        <a class="nav__logo" href="home.html">Aylagraphy</a>
+        <a class="nav__logo" href="home.html"><span class="nav__logo-mark">AG</span><span class="nav__logo-divider" aria-hidden="true"></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
         <a class="nav__link" href="kontakt.html">Kontakt</a>
@@ -44,15 +47,22 @@
       <header class="hero hero--home">
         <div class="hero__image" role="presentation"></div>
         <div class="hero__overlay"></div>
+        <div class="hero__content container">
+          <p class="eyebrow">Aylagraphy</p>
+          <h1>Fine-Art-Hochzeitsfotografie</h1>
+          <p class="hero__subtitle">Leise Geschichten, festgehalten mit Ruhe und einem Blick für Licht.</p>
+          <div class="hero__actions">
+            <a class="btn" href="portfolio.html">Portfolio ansehen</a>
+            <a class="btn btn--ghost" href="kontakt.html">Jetzt anfragen</a>
+          </div>
+        </div>
       </header>
-
-      
     </section>
 
     <section class="content-stream">
       <article class="module module--split-left">
         <div class="module__media media--tall">
-          <img class="img--contain" src="assets/portfolio/IMG_4569.jpeg" alt="Ein Paar im Abendlicht" loading="lazy">
+          <img src="assets/portfolio/IMG_4569.jpeg" alt="Ein Paar im Abendlicht" loading="lazy">
         </div>
         <div class="module__copy">
           <div class="section__header">
@@ -64,18 +74,9 @@
         </div>
       </article>
 
-      <article class="module module--overlay">
-        <img class="module__overlay-img" src="assets/home/detail.jpg" alt="Feines Hochzeitsdetail" loading="lazy">
-        <div class="module__overlay-copy">
-          <p class="eyebrow">Statement</p>
-          <h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht."</h3>
-          <p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p>
-        </div>
-      </article>
-
       <article class="module module--split-right">
         <div class="module__media media--tall">
-          <img class="img--contain" src="assets/portfolio/4-IMG_7877.jpg" alt="Brautpaar im Innenraum" loading="lazy">
+          <img src="assets/portfolio/4-IMG_7877.jpg" alt="Brautpaar im Innenraum" loading="lazy">
         </div>
         <div class="module__copy">
           <div class="section__header">
@@ -83,32 +84,91 @@
             <h2>Eine ruhige Reise zu euren Lieblingsbildern</h2>
           </div>
           <p>Vom ersten Gespräch bis zur Lieferung eurer Galerie begleiten wir euch mit Klarheit, Empathie und einer feinen, künstlerischen Handschrift.</p>
-          <div class="services-list">
-            <div class="service-item">
-              <h4>Couples</h4>
-              <p>Intime Sessions im Abendlicht, inspiriert von eurem Miteinander – leicht, elegant, ungestellt.</p>
+          <div class="service-grid">
+            <div class="service-card">
+              <img src="assets/portfolio/9-IMG_4105.jpg" alt="Couples Session" loading="lazy">
+              <div class="service-card__overlay"></div>
+              <div class="service-card__copy">
+                <h4>Couples</h4>
+                <p>Intime Sessions im Abendlicht, inspiriert von eurem Miteinander – leicht, elegant, ungestellt.</p>
+              </div>
             </div>
-            <div class="service-item">
-              <h4>Elopements</h4>
-              <p>Für kleine Trauungen an besonderen Orten. Wir gestalten eine leise, poetische Bildwelt nur für euch.</p>
+            <div class="service-card">
+              <img src="assets/portfolio/18-IMG_4322.jpg" alt="Elopement" loading="lazy">
+              <div class="service-card__overlay"></div>
+              <div class="service-card__copy">
+                <h4>Elopements</h4>
+                <p>Für kleine Trauungen an besonderen Orten. Wir gestalten eine leise, poetische Bildwelt nur für euch.</p>
+              </div>
             </div>
-            <div class="service-item">
-              <h4>Intimate Weddings</h4>
-              <p>Reportagen voller Atmosphäre: Vom Getting Ready bis zum letzten Tanz, mit viel Gespür für Zwischentöne.</p>
+            <div class="service-card">
+              <img src="assets/portfolio/IMG_4747.jpeg" alt="Intimate Wedding" loading="lazy">
+              <div class="service-card__overlay"></div>
+              <div class="service-card__copy">
+                <h4>Intimate Weddings</h4>
+                <p>Reportagen voller Atmosphäre: Vom Getting Ready bis zum letzten Tanz, mit viel Gespür für Zwischentöne.</p>
+              </div>
             </div>
-            <div class="service-item">
-              <h4>Lifestyle Sessions</h4>
-              <p>Zuhause oder draußen – Geschichten aus eurem Alltag, stilvoll erzählt und mit Kunstgefühl inszeniert.</p>
+            <div class="service-card">
+              <img src="assets/portfolio/11-IMG_8606.jpg" alt="Lifestyle Session" loading="lazy">
+              <div class="service-card__overlay"></div>
+              <div class="service-card__copy">
+                <h4>Lifestyle Sessions</h4>
+                <p>Zuhause oder draußen – Geschichten aus eurem Alltag, stilvoll erzählt und mit Kunstgefühl inszeniert.</p>
+              </div>
             </div>
           </div>
         </div>
       </article>
 
+      <article class="module module--embed">
+        <div class="module__copy">
+          <div class="section__header">
+            <p class="eyebrow">Portfolio</p>
+            <h2>Ein Einblick in unsere Arbeit</h2>
+          </div>
+          <p>Von ruhigen Elopements bis zu großen Reportagen – stöbert durch ausgewählte Momente aus unseren letzten Hochzeiten.</p>
+          <div class="teaser-carousel" data-teaser-carousel>
+            <div class="teaser-carousel__viewport">
+              <div class="teaser-carousel__track">
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/27-IMG_4450.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/IMG_4699.jpeg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/5-IMG_7829.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/33-IMG_4597.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/IMG_4615.jpeg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/9-IMG_7869.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+                <a class="teaser-carousel__slide" href="portfolio.html">
+                  <img src="assets/portfolio/25-IMG_4429.jpg" alt="Portfolio Vorschau" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button>
+            <button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button>
+          </div>
+          <a class="btn insta-link" href="portfolio.html">Ganzes Portfolio ansehen</a>
+        </div>
+      </article>
+
       <article class="module module--overlay module--overlay-secondary">
-        <img class="module__overlay-img" src="assets/home/detail.jpg" alt="Feines Hochzeitsdetail" loading="lazy">
+        <img class="module__overlay-img" src="assets/home/paar.jpg" alt="Paar im Licht" loading="lazy">
         <div class="module__overlay-copy">
           <p class="eyebrow">Statement</p>
-          <h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht."</h3>
+          <h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</h3>
           <p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p>
         </div>
       </article>
