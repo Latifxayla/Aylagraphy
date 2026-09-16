@@ -283,7 +283,7 @@ img {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.4));
 }
 
 /* Page-specific hero backgrounds — one consistent mechanism: a modifier class on .hero__image */
@@ -293,6 +293,11 @@ img {
 .hero__image--neutral ~ .hero__overlay {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
 }
+.hero__content .eyebrow {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
 .hero__image--neutral ~ .hero__content,
 .hero__image--neutral ~ .hero__content .hero__subtitle,
 .hero__image--neutral ~ .hero__content .eyebrow {
@@ -318,6 +323,7 @@ img {
   margin: 0 auto;
   display: grid;
   gap: 1rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
 .hero h1 {
@@ -325,11 +331,13 @@ img {
   font-size: clamp(2.6rem, 5vw, 3.8rem);
   letter-spacing: 0.06em;
   line-height: 1.1;
+  font-weight: 500;
 }
 
 .hero__subtitle {
   max-width: 680px;
   font-size: 1.1rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -713,6 +721,31 @@ img {
 
 .section__intro {
   margin-bottom: 2rem;
+}
+
+.section__intro--center {
+  text-align: center;
+}
+
+.section__intro--center .section__header,
+.section__intro--center > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.access-cta__inner {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.access-cta__text {
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;
+  text-align: center;
+  max-width: 480px;
 }
 
 .faq__cta {
@@ -1210,6 +1243,33 @@ textarea {
 .form__group--two > div {
   display: grid;
   gap: 0.4rem;
+}
+
+.pw-gate {
+  max-width: 440px;
+  margin: 4rem auto;
+  padding: 2.5rem clamp(1.5rem, 5vw, 2.5rem);
+  background: #ffffff;
+  border: 1px solid var(--color-soft);
+  box-shadow: var(--shadow-faint);
+  display: grid;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.pw-gate .form {
+  text-align: left;
+}
+
+.pw-gate__error {
+  color: #a33;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.pakete-detail {
+  display: grid;
+  gap: 1.4rem;
 }
 
 /* Lightbox */

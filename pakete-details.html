@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paket-Details | Aylagraphy</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/AG_logo_mark_brown.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page" data-page="pakete-details">
+  <nav class="nav">
+    <div class="nav__inner">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links-left nav-links-right">
+        <span class="sr-only">Menü öffnen</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__links nav__links--left" id="nav-links-left">
+        <a class="nav__link" href="home.html">Home</a>
+        <a class="nav__link" href="ueber-uns.html">Über uns</a>
+        <a class="nav__link" href="portfolio.html">Portfolio</a>
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
+      </div>
+      <div class="nav__brand">
+        <a class="nav__logo" href="home.html"><span class="nav__logo-mark">AG</span><span class="nav__logo-divider" aria-hidden="true"></span><span class="nav__logo-text">Aylagraphy</span></a>
+      </div>
+      <div class="nav__links nav__links--right" id="nav-links-right">
+        <a class="nav__link" href="kontakt.html">Kontakt</a>
+        <div class="nav__social">
+          <!-- Social Media Icons hier einfügen -->
+        </div>
+      </div>
+      <a class="nav__cta" href="kontakt.html">Anfragen</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section section--light">
+      <div class="container">
+
+        <div id="pw-gate" class="pw-gate">
+          <p class="eyebrow">Geschützter Bereich</p>
+          <h1>Eure Paket-Details</h1>
+          <p>Bitte gebt den Code ein, den ihr von uns erhalten habt.</p>
+          <form class="form" id="pw-form">
+            <div class="form__group">
+              <label for="pw-input">Zugangscode</label>
+              <input type="password" id="pw-input" name="code" autocomplete="off" required>
+            </div>
+            <p class="pw-gate__error" id="pw-error" aria-live="polite"></p>
+            <button class="btn" type="submit">Freischalten</button>
+          </form>
+        </div>
+
+        <div id="pakete-content" class="section__intro" hidden>
+          <div class="section__header">
+            <p class="eyebrow">Willkommen</p>
+            <h2>Eure Pakete im Detail</h2>
+            <p>Schön, dass ihr da seid. Hier nehmen wir uns Zeit für alle Details zu unseren Paketen – ausführlicher als jede PDF, und immer auf dem neuesten Stand. Wenn noch Fragen offen bleiben, meldet euch jederzeit gern bei uns.</p>
+          </div>
+
+          <div class="split-grid split-grid--three pricing pakete-detail">
+            <div class="card">
+              <p class="card__eyebrow">Couples</p>
+              <h3>EUR 690</h3>
+              <p>1,5 Stunden Session · 40+ fein bearbeitete Bilder · Moodboard &amp; Location-Guide.</p>
+              <p>Für Paare, die sich einen ruhigen, besonderen Moment zu zweit schenken möchten – ob Verlobung, Jahrestag oder einfach so. Im Vorgespräch sprechen wir über Location und Ablauf, damit ihr euch am Tag selbst einfach nur fallen lassen könnt.</p>
+              <p>Inklusive: persönliches Vorgespräch, Location-Empfehlung passend zu eurem Stil, kuratierte Galerie in Farbe und Schwarz-Weiß.</p>
+            </div>
+            <div class="card card--accent">
+              <p class="card__eyebrow">Intimate Weddings</p>
+              <h3>ab EUR 2.400</h3>
+              <p>6 Stunden Reportage · Storytelling-Galerie · Preview innerhalb 72h · feine Prints optional.</p>
+              <p>Unser Herzstück: eine Hochzeit im kleineren, familiären Rahmen – von den ersten Vorbereitungen bis zum letzten Tanz. Wir bleiben unauffällig an eurer Seite und halten die leisen Zwischentöne genauso fest wie die großen Gefühle.</p>
+              <p>Inklusive: ausführliches Vorgespräch &amp; Zeitplanberatung, durchgehende Begleitung, kuratierte Online-Galerie, Preview binnen 72 Stunden, Option auf Fine-Art-Prints und Alben.</p>
+            </div>
+            <div class="card">
+              <p class="card__eyebrow">Elopements</p>
+              <h3>ab EUR 1.800</h3>
+              <p>4 Stunden Begleitung · maßgeschneiderter Ablauf · dezentes Posing-Coaching, wenn gewünscht.</p>
+              <p>Für Paare, die sich abseits großer Feiern das Ja-Wort geben – an eurem Lieblingsort, in eurem Tempo. Gemeinsam planen wir den Ablauf, und mit sanftem Coaching sorgen wir dafür, dass ihr euch vor der Kamera wohlfühlt.</p>
+              <p>Inklusive: individuelle Ablaufplanung, Unterstützung bei der Location-Wahl, redigierte Galerie mit erzählerischem Charakter.</p>
+            </div>
+          </div>
+
+          <div class="faq__cta">
+            <a class="btn" href="kontakt.html">Fragen? Schreibt uns</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">Aylagraphy</div>
+      <div class="footer__links">
+        <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="mailto:hallo@aylagraphy.de">Mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Zugangscode hier ändern, wann immer ihr wollt – einfach Wert ersetzen und Seite neu veröffentlichen (git add/commit/push).
+    const ACCESS_CODE = "Aylagraphy2025";
+
+    const gate = document.getElementById('pw-gate');
+    const content = document.getElementById('pakete-content');
+    const form = document.getElementById('pw-form');
+    const input = document.getElementById('pw-input');
+    const error = document.getElementById('pw-error');
+
+    function unlock() {
+      gate.hidden = true;
+      content.hidden = false;
+      sessionStorage.setItem('pakete-unlocked', '1');
+    }
+
+    if (sessionStorage.getItem('pakete-unlocked') === '1') {
+      unlock();
+    }
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (input.value.trim() === ACCESS_CODE) {
+        unlock();
+      } else {
+        error.textContent = 'Der Code ist leider nicht korrekt.';
+        input.value = '';
+        input.focus();
+      }
+    });
+  </script>
+</body>
+</html>
