@@ -17,6 +17,7 @@
       <span class="page-loader__mark"><span>A</span><span>G</span></span>
       <span class="page-loader__name" aria-label="Aylagraphy"><span>A</span><span>y</span><span>l</span><span>a</span><span>g</span><span>r</span><span>a</span><span>p</span><span>h</span><span>y</span></span>
     </div>
+    <span class="page-loader__bar" aria-hidden="true"></span>
   </div>
 
   <nav class="nav">
@@ -42,7 +43,6 @@
           <!-- Social Media Icons hier einfügen -->
         </div>
       </div>
-      <a class="nav__cta" href="kontakt.html">Anfragen</a>
     </div>
   </nav>
 
@@ -108,10 +108,23 @@
         </div></div><button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button><button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button></div>
       </section>
 
+      <!-- Farbe / Schwarz-Weiß zum Selbersteuern -->
+      <section class="compare-section">
+        <div class="section__header"><p class="eyebrow">Farbe oder Schwarz-Weiß?</p><h2>Zwei Blicke auf einen Moment</h2></div>
+        <div class="compare" data-compare style="--pos: 50%;">
+          <img class="compare__img" src="assets/portfolio/paris-2/paris-2-03.jpg" alt="Brautpaar vor dem Eiffelturm in Farbe" loading="lazy">
+          <img class="compare__img compare__img--bw" src="assets/portfolio/paris-2/paris-2-03.jpg" alt="" aria-hidden="true" loading="lazy">
+          <span class="compare__label compare__label--left">Schwarz-Weiß</span>
+          <span class="compare__label compare__label--right">Farbe</span>
+          <span class="compare__handle" aria-hidden="true"><span>&lsaquo;&rsaquo;</span></span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Zwischen Schwarz-Weiß und Farbe schieben">
+        </div>
+        <p class="compare__hint">Zieht den Regler nach links oder rechts.</p>
+      </section>
+
       <article class="module module--embed">
         <div class="module__copy">
           <div class="section__header"><p class="eyebrow">Portfolio</p><h2>Ein Einblick in unsere Arbeit</h2></div>
-          <p>Von ruhigen Elopements bis zu großen Reportagen – stöbert durch ausgewählte Momente aus unseren letzten Hochzeiten.</p>
           <a class="btn btn--text insta-link" href="portfolio.html">Ganzes Portfolio ansehen</a>
         </div>
       </article>
@@ -122,10 +135,32 @@
     <div class="container footer__inner">
       <div class="footer__brand">Aylagraphy</div>
       <div class="footer__links">
-        <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-        <a href="mailto:hallo@aylagraphy.de">Mail</a>
+        <a class="footer__social" href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Aylagraphy auf Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4.2" /><circle class="footer__social-dot" cx="17.3" cy="6.7" r="1.1" /></svg>
+        </a>
+        <!-- TikTok-Link hier eintragen -->
+        <a class="footer__social" href="#" target="_blank" rel="noopener noreferrer" aria-label="Aylagraphy auf TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5" /><path d="M14 3c.4 2.6 2.2 4.4 5 4.7" /></svg>
+        </a>
+        <a href="mailto:aylagraphy@outlook.de">Mail</a>
+        <button class="footer__legal" type="button" data-open-dialog="impressum">Impressum</button>
       </div>
     </div>
+    <!-- Impressum: Platzhalter in [eckigen Klammern] durch echte Angaben ersetzen -->
+    <dialog class="legal-dialog" id="impressum" aria-labelledby="impressum-title">
+      <button class="legal-dialog__close" type="button" data-close-dialog aria-label="Impressum schließen">&times;</button>
+      <h2 id="impressum-title">Impressum</h2>
+      <p class="legal-dialog__label">Angaben gemäß § 5 DDG</p>
+      <p>Aylagraphy<br>[Vor- und Nachname]<br>[Straße und Hausnummer]<br>[PLZ und Ort]<br>Deutschland</p>
+      <p class="legal-dialog__label">Kontakt</p>
+      <p>E-Mail: <a href="mailto:aylagraphy@outlook.de">aylagraphy@outlook.de</a><br>Telefon: [Telefonnummer]</p>
+      <p class="legal-dialog__label">Umsatzsteuer</p>
+      <p>[Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG – oder Hinweis auf Kleinunternehmerregelung]</p>
+      <p class="legal-dialog__label">Verantwortlich für den Inhalt</p>
+      <p>[Vor- und Nachname], Anschrift wie oben</p>
+      <p class="legal-dialog__label">Verbraucherstreitbeilegung</p>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </dialog>
   </footer>
 
   <script src="script.js"></script>

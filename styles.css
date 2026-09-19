@@ -2401,3 +2401,673 @@ body[data-page="home"] .hero--home .hero__image {
 .portfolio-covers[hidden] {
   display: none;
 }
+
+/* Footer: Instagram- und TikTok-Symbole */
+.footer__links {
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer__social {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.footer__social svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer__social svg .footer__social-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Navigation (Computer): AG-Logo ganz links, Menüpunkte zusammen in der Mitte */
+@media (min-width: 961px) {
+  /* Alle Menüpunkte als eine Gruppe exakt in der Mitte der Leiste */
+  .nav__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem; /* gleicher Abstand wie zwischen den anderen Menüpunkten */
+    min-height: 4.2rem; /* Leiste bleibt so hoch wie mit dem Logo in der Mitte */
+  }
+
+  /* leerer Platzhalter für Social-Icons soll die Mitte nicht verschieben */
+  .nav__social {
+    display: none;
+  }
+
+  .nav__brand {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Logo (auch aufgeklappt) liegt über allem und verschiebt die Menüpunkte nicht */
+  .nav__brand {
+    z-index: 2;
+  }
+
+  .nav__logo {
+    animation: none;
+  }
+}
+
+/* „Aylagraphy“ beim Überfahren des Logos vollständig zeigen (letztes Y wurde abgeschnitten) */
+.nav__logo:hover .nav__logo-text {
+  max-width: 22rem;
+}
+
+/* Footer: Impressum-Link */
+.footer__legal {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer__legal:hover {
+  text-decoration: underline;
+}
+
+/* Impressum-Fenster */
+.legal-dialog {
+  /* genau in der Mitte des Bildschirms (die globale margin: 0-Regel würde das sonst aufheben) */
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, calc(100% - 2rem));
+  height: fit-content;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding: 2.5rem clamp(1.5rem, 5vw, 2.5rem);
+  border: none;
+  background: #ffffff;
+  color: var(--color-ink);
+  box-shadow: var(--shadow-soft);
+  line-height: 1.7;
+}
+
+.legal-dialog::backdrop {
+  background: rgba(26, 42, 37, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.legal-dialog h2 {
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  margin-bottom: 1.2rem;
+}
+
+.legal-dialog p {
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+.legal-dialog__label {
+  margin-top: 1.2rem;
+  font-size: 0.72rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.legal-dialog__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+/* Impressum öffnet sich sanft aus der Mitte */
+.legal-dialog[open] {
+  animation: legal-open 0.35s cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+
+.legal-dialog[open]::backdrop {
+  animation: legal-backdrop 0.35s ease;
+}
+
+@keyframes legal-open {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes legal-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legal-dialog[open],
+  .legal-dialog[open]::backdrop {
+    animation: none;
+  }
+}
+
+/* Startseite, nur Handy/Tablet hochkant: Bildausschnitt auf das Brautpaar (rechts im Foto) legen.
+   Die Ansicht am Laptop bleibt unverändert. */
+@media (max-width: 900px) and (orientation: portrait) {
+  body[data-page="home"] .hero--home .hero__image {
+    background-position: 67% center;
+  }
+}
+
+/* ===== Portfolio auf Tablet und Handy (Laptop bleibt unverändert) ===== */
+@media (max-width: 960px) {
+  /* Galerie-Kacheln: 2 pro Reihe, Höhe passt sich der Breite an */
+  .portfolio-covers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .portfolio-cover img {
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .portfolio-cover__content {
+    padding: 0.8rem 0.8rem 0.9rem;
+  }
+
+  .portfolio-cover strong {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .portfolio-cover__label {
+    font-size: 0.62rem;
+  }
+
+  /* Bilder in einer geöffneten Galerie: 2 pro Reihe statt bildschirmfüllend */
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.3rem;
+  }
+
+  /* Zurück-Pfeil und Name etwas kleiner */
+  .portfolio-back {
+    width: calc(100% - 2rem);
+    font-size: 0.72rem;
+  }
+
+  .portfolio-back em {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-covers {
+    width: calc(100% - 2rem);
+  }
+}
+
+/* Navigation auf Tablet und Handy: AG-Logo genau in der Mitte, Menü-Knopf rechts */
+@media (max-width: 960px) {
+  .nav__inner {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas:
+      ". brand toggle"
+      "links-left links-left links-left"
+      "links-right links-right links-right";
+  }
+
+  .nav__brand {
+    justify-content: center;
+  }
+
+  .nav__toggle {
+    justify-self: end;
+  }
+}
+
+/* Portfolio: Überschriften „Hochzeiten“ und „Destinations“ über den Kacheln */
+.portfolio-group-title {
+  margin: 2.8rem auto 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.portfolio-group-title + .portfolio-covers {
+  margin-top: 1rem;
+}
+
+.portfolio-overview {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+.portfolio-overview[hidden] {
+  display: none;
+}
+
+/* Portfolio: Überschrift „Destinations“ größer */
+.portfolio-group-title--large {
+  margin-top: 4rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-ink);
+}
+
+
+
+
+/* Titelbilder auf Portfolio und Preise: beim Hochgleiten sauber im Rahmen halten (wie Startseite) */
+.hero--soft {
+  overflow: hidden;
+}
+
+.hero--soft .hero__image {
+  will-change: transform, opacity;
+}
+
+/* Geräte ohne Maus (Handy/Tablet): Überfahren gibt es dort nicht – Namen und Orte deshalb immer zeigen.
+   Mit Maus erscheinen sie nur beim Drüberfahren. */
+@media (hover: none) {
+  .portfolio-cover__content {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Galerien am Laptop immer genau 4 Bilder pro Reihe, damit volle Reihen keine Lücke lassen */
+@media (min-width: 961px) {
+  .gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Alle Bilder in ihren Rahmen mittig ausrichten (Ausschnitt immer aus der Bildmitte) */
+img {
+  object-position: center center;
+}
+
+/* Galerie Simay & Koray: Bildausschnitt etwas links von der Mitte */
+.gallery img[data-category="reportage-2"] {
+  object-position: 35% center;
+}
+
+/* In den geöffneten Galerien keine Namen auf den Bildern anzeigen */
+.gallery figure figcaption {
+  display: none;
+}
+
+/* ===== Startseite: Farbe / Schwarz-Weiß mit Regler ===== */
+.compare-section {
+  padding: 1rem clamp(1.5rem, 6vw, 5rem) 3.5rem;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.compare {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.compare__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Schwarz-Weiß-Ebene liegt oben und zeigt nur den linken Teil bis zum Regler */
+.compare__img--bw {
+  filter: grayscale(100%) contrast(1.05);
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.compare__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  margin-left: -1px;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.compare__handle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* unsichtbarer Regler über dem ganzen Bild – funktioniert mit Maus, Finger und Tastatur */
+.compare__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.compare__range:focus-visible + .compare__handle,
+.compare:focus-within .compare__handle span {
+  outline: 1px solid var(--color-accent);
+}
+
+.compare__label {
+  position: absolute;
+  top: 1rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  pointer-events: none;
+}
+
+.compare__label--left { left: 1rem; }
+.compare__label--right { right: 1rem; }
+
+.compare__hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* Handy: Namen und Orte auf den Galerie-Kacheln kleiner */
+@media (max-width: 640px) {
+  .portfolio-cover__content {
+    padding: 0.6rem 0.6rem 0.7rem;
+    gap: 0.1rem;
+  }
+
+  .portfolio-cover strong {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+  }
+
+  .portfolio-cover__label {
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+  }
+
+  .portfolio-back em {
+    font-size: 1rem;
+  }
+}
+
+/* Titelbilder Portfolio & Preise: Schrift lesbar machen –
+   sanfter dunkler Verlauf hinter dem Text (links/unten), rechts bleibt das Foto hell */
+.hero--soft .hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(12, 22, 18, 0.62) 0%, rgba(12, 22, 18, 0.35) 45%, rgba(12, 22, 18, 0) 80%),
+    linear-gradient(0deg, rgba(12, 22, 18, 0.35) 0%, rgba(12, 22, 18, 0) 55%);
+}
+
+.hero--soft .hero__content h1,
+.hero--soft .hero__content .eyebrow,
+.hero--soft .hero__subtitle {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Handy: Text steht über dem ganzen Bild – Verlauf gleichmäßiger */
+@media (max-width: 640px) {
+  .hero--soft .hero__overlay {
+    background: linear-gradient(0deg, rgba(12, 22, 18, 0.6) 0%, rgba(12, 22, 18, 0.25) 60%, rgba(12, 22, 18, 0.1) 100%);
+  }
+}
+
+/* ===== Keine grünen Kästen: alle Buttons nur als Schrift mit feiner Linie ===== */
+.btn,
+.btn--ghost,
+.btn.btn--ghost {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  color: var(--color-accent);
+  padding: 0.3rem 0;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  box-shadow: none;
+}
+
+.btn:hover,
+.btn--ghost:hover {
+  background: transparent;
+  color: var(--color-accent);
+  opacity: 0.7;
+  transform: none;
+  text-decoration: none;
+}
+
+/* Pfeile im Highlights-Karussell: weiß statt grüner Kasten */
+.teaser-carousel__control {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-accent);
+}
+
+.teaser-carousel__control:hover {
+  background: #ffffff;
+  opacity: 1;
+}
+
+/* Pfeile in der vergrößerten Bildansicht: ohne grünen Kasten */
+.lightbox__nav {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.lightbox__nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Startanimation: feine Ladelinie unter dem Logo */
+.page-loader {
+  grid-template-rows: auto auto;
+  align-content: center;
+  row-gap: 2.2rem;
+}
+
+.page-loader__bar {
+  position: relative;
+  justify-self: center;
+  width: min(60vw, 220px);
+  height: 1px;
+  background: rgba(24, 63, 53, 0.15);
+  overflow: hidden;
+}
+
+.page-loader__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  /* läuft genau so lange wie die Startanimation sichtbar ist */
+  animation: loader-bar 4.6s cubic-bezier(0.45, 0, 0.25, 1) 0.2s forwards;
+}
+
+@keyframes loader-bar {
+  to { transform: scaleX(1); }
+}
+
+/* Portfolio-Titelbild: Überschrift mittig, Verlauf gleichmäßig um die Mitte */
+.hero--centered .hero__content {
+  justify-items: center;
+  text-align: center;
+}
+
+.hero--centered .hero__content h1 {
+  margin: 0 auto;
+}
+
+.hero--centered .hero__overlay {
+  background: radial-gradient(ellipse at center, rgba(12, 22, 18, 0.5) 0%, rgba(12, 22, 18, 0.2) 55%, rgba(12, 22, 18, 0.05) 100%);
+}
+
+/* Portfolio-Titelbild: „Portfolio“ über der Überschrift größer und minimalistischer */
+.hero--centered .hero__content .eyebrow {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  margin-right: -0.45em; /* Ausgleich für den Buchstabenabstand, damit es optisch mittig bleibt */
+}
+
+/* ===== Handy-Feinschliff für die neuen Bereiche ===== */
+@media (max-width: 640px) {
+  /* Portfolio: Zurück-Pfeil und langer Galeriename (z. B. „Melania & Jan-Luca“) dürfen umbrechen */
+  .portfolio-back {
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+  }
+
+  /* Portfolio: Überschriften „Hochzeiten“ / „Destinations“ */
+  .portfolio-group-title {
+    width: calc(100% - 2rem);
+    margin-top: 2rem;
+  }
+
+  .portfolio-group-title--large {
+    margin-top: 2.8rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Portfolio-Titelbild: Überschrift und „Portfolio“ passend zur Breite */
+  .hero--centered .hero__content h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    line-height: 1.05;
+  }
+
+  .hero--centered .hero__content .eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    margin-right: -0.35em;
+  }
+
+  /* Startseite: Farbe/Schwarz-Weiß-Regler */
+  .compare-section {
+    padding: 0.5rem 1rem 2.5rem;
+    gap: 1rem;
+  }
+
+  .compare__label {
+    top: 0.6rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .compare__label--left { left: 0.6rem; }
+  .compare__label--right { right: 0.6rem; }
+
+  .compare__handle span {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Startseite: Highlights etwas weniger Seitenabstand */
+  .highlights {
+    padding: 0.5rem 1rem 2.5rem;
+  }
+
+  /* Über uns: „AYLIN meets LATIF“ passt in eine schmale Zeile */
+  .story__pair {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .story__brand {
+    font-size: 1.05rem;
+    letter-spacing: 0.22em;
+  }
+
+  /* Buttons (nur Schrift) nicht zu breit auseinandergezogen */
+  .btn,
+  .btn--ghost {
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+  }
+
+  /* Footer: Symbole, Mail und Impressum sauber umbrechen */
+  .footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Startanimation: Ladelinie etwas schmaler */
+  .page-loader__bar {
+    width: 55vw;
+  }
+
+  /* Musik-Knopf etwas kleiner und näher am Rand */
+  .music-toggle {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Portfolio: schmalere Abstände zwischen den Galerie-Kacheln (wie in den Galerien) */
+.portfolio-covers {
+  gap: 0.4rem;
+}
+
+@media (max-width: 960px) {
+  .portfolio-covers {
+    gap: 0.3rem;
+  }
+}

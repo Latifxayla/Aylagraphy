@@ -94,7 +94,10 @@ function initPortfolioHoverLabels() {
     'reportage-2': 'Simay & Koray',
     'reportage-3': 'Hielay & Oguzhan',
     'reportage-4': 'Frank & Ebru',
-    'reportage-5': 'Jana & Noah'
+    'reportage-5': 'Paris',
+    'reportage-6': 'Elif',
+    'reportage-7': 'Melania & Jan-Luca',
+    'reportage-8': 'Paris'
   };
 
   Array.from(gallery.querySelectorAll('img')).forEach((img) => {
@@ -179,7 +182,8 @@ function initLightbox() {
 function initPortfolioFilter() {
   const coverButtons = document.querySelectorAll('.portfolio-cover');
   const gallery = document.querySelector('.gallery');
-  const coverGrid = document.querySelector('.portfolio-covers');
+  // Übersicht mit allen Galerie-Kacheln (Hochzeiten + Destinations)
+  const coverGrid = document.querySelector('.portfolio-overview') || document.querySelector('.portfolio-covers');
   if (!gallery) return;
 
   const images = Array.from(gallery.querySelectorAll('img'));
@@ -353,27 +357,31 @@ function initContactForm() {
     if (photoNames.length) {
       bodyLines.push('', `Fotos (bitte an diese E-Mail anhängen): ${photoNames.join(', ')}`);
     }
-    const mailto = `mailto:hallo@aylagraphy.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    const mailto = `mailto:aylagraphy@outlook.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
     window.location.href = mailto;
   });
 }
 
-// ----- Startseite: großes Bild gleitet beim Scrollen sanft nach oben und blendet leicht aus -----
+// ----- Titelbilder (Home, Portfolio, Preise): Bild gleitet beim Scrollen sanft nach oben und blendet leicht aus -----
 function initHeroParallax() {
-  const hero = document.querySelector('.hero--home');
-  const image = hero && hero.querySelector('.hero__image');
-  if (!image) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const heroes = Array.from(document.querySelectorAll('.hero'))
+    .map((hero) => ({ hero, image: hero.querySelector('.hero__image') }))
+    .filter((item) => item.image);
+  if (!heroes.length) return;
 
   let ticking = false;
   function update() {
     ticking = false;
-    const height = hero.offsetHeight || 1;
-    const y = Math.min(Math.max(window.scrollY, 0), height);
-    const progress = y / height;
-    // Bild bewegt sich langsamer als die Seite (wirkt wie sanftes Hochgleiten) und wird blasser
-    image.style.transform = `translateY(${y * 0.45}px) scale(1.06)`;
-    image.style.opacity = String(1 - progress * 0.55);
+    heroes.forEach(({ hero, image }) => {
+      const height = hero.offsetHeight || 1;
+      // Wie weit ist das Titelbild schon aus dem Bildschirm gescrollt?
+      const scrolled = Math.min(Math.max(-hero.getBoundingClientRect().top, 0), height);
+      const progress = scrolled / height;
+      // Bild bewegt sich langsamer als die Seite (wirkt wie sanftes Hochgleiten) und wird blasser
+      image.style.transform = `translateY(${scrolled * 0.45}px) scale(1.06)`;
+      image.style.opacity = String(1 - progress * 0.55);
+    });
   }
   function onScroll() {
     if (!ticking) {
@@ -383,7 +391,11 @@ function initHeroParallax() {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onCleanup(() => window.removeEventListener('scroll', onScroll));
+  window.addEventListener('resize', onScroll);
+  onCleanup(() => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+  });
   update();
 }
 
@@ -466,6 +478,33 @@ function initCircleJoin() {
   update();
 }
 
+// ----- Impressum (und weitere Rechtstexte) als Fenster im Footer -----
+function initLegalDialogs() {
+  document.querySelectorAll('[data-open-dialog]').forEach((button) => {
+    const dialog = document.getElementById(button.dataset.openDialog);
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    button.addEventListener('click', () => dialog.showModal());
+    dialog.querySelectorAll('[data-close-dialog]').forEach((close) => {
+      close.addEventListener('click', () => dialog.close());
+    });
+    // Klick auf den abgedunkelten Hintergrund schließt das Fenster
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+}
+
+// ----- Startseite: Bild mit Regler zwischen Schwarz-Weiß und Farbe -----
+function initCompareSliders() {
+  document.querySelectorAll('[data-compare]').forEach((compare) => {
+    const range = compare.querySelector('.compare__range');
+    if (!range) return;
+    const update = () => compare.style.setProperty('--pos', `${range.value}%`);
+    range.addEventListener('input', update);
+    update();
+  });
+}
+
 // Alles, was pro Seite neu eingerichtet werden muss
 function initPage() {
   initPageLoader();
@@ -479,6 +518,8 @@ function initPage() {
   initHeroParallax();
   initScrollReveal();
   initCircleJoin();
+  initLegalDialogs();
+  initCompareSliders();
 }
 
 // ===== Ruhige Hintergrundmusik (assets/audio/hintergrund.mp3) =====
