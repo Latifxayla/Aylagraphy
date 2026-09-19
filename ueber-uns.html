@@ -24,12 +24,12 @@
         <a class="nav__link" href="home.html">Home</a>
         <a class="nav__link is-active" href="ueber-uns.html">Über uns</a>
         <a class="nav__link" href="portfolio.html">Portfolio</a>
-        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
         <a class="nav__logo" href="home.html"><span class="nav__logo-mark"><span class="nav__logo-letter">A</span><span class="nav__logo-letter">G</span></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
         <a class="nav__link" href="kontakt.html">Kontakt</a>
         <div class="nav__social">
           <!-- Social Media Icons hier einfügen -->
@@ -39,15 +39,7 @@
     </div>
   </nav>
 
-  <header class="hero hero--soft">
-    <div class="hero__image hero__image--neutral" role="presentation"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <p class="eyebrow">Kennenlernen</p>
-      <h1>Über uns</h1>
-      <p class="hero__subtitle">Wir sind zwei leise Beobachter*innen mit einem Faible für Licht, Emotionen und echte Verbindung.</p>
-    </div>
-  </header>
+  <h1 class="sr-only">Über uns – Aylagraphy</h1>
 
   <main>
     <section class="section section--light">
@@ -60,20 +52,52 @@
       </div>
     </section>
 
+    <!-- Die Geschichte hinter dem Namen, kombiniert mit den Fotos -->
     <section class="section section--light">
       <div class="container split-grid split-grid--two split-grid--gap about-photo-block">
-        <div class="stack stack--gap">
-          <p class="eyebrow">Wir zwei</p>
-          <p>Aylin und Latif – zwei Blicke, eine gemeinsame Sprache. Was uns beruflich verbindet, trägt uns auch privat: die Ruhe, mit der wir Momente einfangen, und der Mut, dabei immer ehrlich zu bleiben.</p>
-          <p>Ob am anderen Ende der Welt oder direkt vor der eigenen Haustür – wir sind dort, wo eure Geschichte gerade passiert.</p>
+        <div class="stack stack--gap story">
+          <p class="eyebrow">Der Ursprung</p>
+          <h2 class="story__title">Nicht nur ein Name.<br><em>Unser gemeinsamer Blick.</em></h2>
+          <div class="story__text">
+            <p>Aylagraphy begann mit Aylin. Doch die Geschichte dahinter wurde zu unserer.</p>
+            <p>Aylin &amp; Latif. Zwei Menschen. Zwei Perspektiven. Gemeinsam Aylagraphy.</p>
+            <p>Wir halten nicht einfach Augenblicke fest. Wir bewahren das Gefühl, das in ihnen steckt.</p>
+          </div>
+          <div class="story__names" aria-label="Aylin meets Latif – Aylagraphy">
+            <p class="story__pair"><span>Aylin</span><em>meets</em><span>Latif</span></p>
+            <p class="story__brand">Aylagraphy</p>
+            <p class="story__claim">Zwei Namen. Eine gemeinsame Handschrift.</p>
+          </div>
         </div>
         <div class="photo-overlap">
           <div class="photo-overlap__main">
-            <img src="assets/portfolio/IMG_3925.JPG" alt="Aylin von Aylagraphy" loading="lazy">
+            <img src="assets/ueber-uns/aylin-portrait-1.jpg" alt="Aylin mit Brautstrauß vor weißem Stoff" loading="lazy">
           </div>
           <div class="photo-overlap__secondary">
-            <img src="assets/portfolio/IMG_3928.JPG" alt="Aylin mit Kamera" loading="lazy">
+            <img src="assets/ueber-uns/aylin-portrait-2.jpg" alt="Aylin lächelnd mit Blumen, schwarz-weiß" loading="lazy">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story story--idea">
+      <div class="container story__idea">
+        <svg class="story__mark" viewBox="0 0 300 180" role="img" aria-label="Zwei überlappende Kreise: links Ay, rechts La, in der Mitte Aylagraphy">
+          <circle cx="112" cy="90" r="82" />
+          <circle cx="188" cy="90" r="82" />
+          <text class="story__mark-part" x="62" y="102" text-anchor="middle">Ay</text>
+          <text class="story__mark-part" x="238" y="102" text-anchor="middle">La</text>
+          <text class="story__mark-name" x="150" y="95" text-anchor="middle">Aylagraphy</text>
+        </svg>
+        <div class="stack stack--gap">
+          <p class="eyebrow">Die Idee</p>
+          <h2 class="story__title">Wo aus zwei Blickwinkeln<br><em>eine Geschichte wird.</em></h2>
+          <div class="story__text">
+            <p>Keine klassische Kamera. Keine offensichtliche Linse. Unser Zeichen erzählt stattdessen von Verbindung: Zwei Kreise stehen für zwei Menschen und zwei Perspektiven. Ihre Überschneidung ist der Ort, an dem Aylagraphy entsteht.</p>
+            <p>Das „&amp;“ ist kein Detail. Es ist unsere Geschichte.</p>
+          </div>
+          <p class="story__signoff">Nicht nur fotografiert. <em>Sondern gefühlt.</em></p>
+          <p class="story__claim">made together. remembered forever.</p>
         </div>
       </div>
     </section>
@@ -88,7 +112,7 @@
       
       <div class="container split-grid split-grid--two split-grid--gap">
         <div>
-          <div class="value-image" aria-hidden="true">Foto folgt</div>
+          <div class="value-image value-image--photo"><img src="assets/ueber-uns/aylin-portrait-3.jpg" alt="Portrait von Aylin im Blazer" loading="lazy"></div>
         </div>
         <div class="stack stack--gap">
           <div class="service-item">

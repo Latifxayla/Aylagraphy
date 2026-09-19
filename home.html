@@ -31,12 +31,12 @@
         <a class="nav__link is-active" href="home.html">Home</a>
         <a class="nav__link" href="ueber-uns.html">Über uns</a>
         <a class="nav__link" href="portfolio.html">Portfolio</a>
-        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
         <a class="nav__logo" href="home.html"><span class="nav__logo-mark"><span class="nav__logo-letter">A</span><span class="nav__logo-letter">G</span></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
         <a class="nav__link" href="kontakt.html">Kontakt</a>
         <div class="nav__social">
           <!-- Social Media Icons hier einfügen -->
@@ -54,72 +54,65 @@
       <header class="hero hero--home">
         <div class="hero__image" role="presentation"></div>
         <div class="hero__overlay"></div>
-        <div class="hero__content container">
-          <p class="eyebrow">Aylagraphy</p>
-          <h1>Fine-Art-Hochzeitsfotografie</h1>
-          <p class="hero__subtitle">Leise Geschichten, festgehalten mit Ruhe und einem Blick für Licht.</p>
-          <div class="hero__actions">
-            <a class="btn" href="portfolio.html">Portfolio ansehen</a>
-            <a class="btn btn--ghost" href="kontakt.html">Jetzt anfragen</a>
-          </div>
-        </div>
+        <!-- Überschrift nur für Suchmaschinen/Screenreader, nicht sichtbar -->
+        <h1 class="sr-only">Aylagraphy – Fine-Art-Hochzeitsfotografie</h1>
       </header>
     </section>
 
     <section class="content-stream">
       <article class="module module--split-left">
-        <div class="module__media media--tall"><img src="assets/portfolio/IMG_4569.jpeg" alt="Ein Paar im Abendlicht" loading="lazy"></div>
+        <div class="module__media media--portrait"><img src="assets/portfolio/IMG_9257.JPG" alt="Brautpaar im Garten unter Bäumen" loading="lazy"></div>
         <div class="module__copy">
-          <div class="section__header"><p class="eyebrow">Unser Ansatz</p><h2>Sanfte Geschichten, liebevoll festgehalten</h2></div>
-          <p>Wir glauben an Bilder, die atmen. An zarte Bewegungen, stille Gesten und Momente voller Gefühl. Mit viel Ruhe und einem Blick für Details dokumentieren wir eure Geschichte, damit ihr sie immer wieder neu erleben könnt.</p>
-          <p>Unsere Arbeitsweise ist unaufdringlich: Wir lassen Raum, beobachten, führen nur sanft, wenn es euch hilft. So entstehen authentische Portraits, die wie von selbst passieren – mit einer Ästhetik, die zeitlos bleibt.</p>
+          <div class="section__header"><p class="eyebrow">Unser Ansatz</p><h2>Unsere Philosophie</h2></div>
+          <p>Ein Hochzeitstag besteht aus so viel mehr als den Momenten, die geplant sind. Es sind oft die kleinen Dinge dazwischen, die später die größte Bedeutung bekommen – ein vertrauter Blick, eine kurze Berührung, die Aufregung kurz vor dem Ja-Wort oder Menschen, die gemeinsam mit euch diesen besonderen Tag erleben.</p>
+          <p>Unsere Arbeit bedeutet für uns, genau diese Erinnerungen für euch zu bewahren. Wir möchten Bilder schaffen, in denen ihr euch selbst wiederfindet und die euch auch Jahre später noch an das Gefühl dieses Tages erinnern.</p>
+          <p>Dabei begleiten wir euch mit einem besonderen Blick für Ästhetik, Emotionen und Details. Wir halten fest, was euren Tag zu eurem macht – die großen Augenblicke genauso wie all das Schöne, das vielleicht nur für einen kurzen Moment passiert.</p>
+          <p class="philosophy__closing">Damit aus einem einzigen Tag Erinnerungen für ein ganzes Leben werden.</p>
         </div>
       </article>
 
-      <article class="module module--split-right">
-        <div class="module__media media--tall"><img src="assets/portfolio/4-IMG_7877.jpg" alt="Brautpaar im Innenraum" loading="lazy"></div>
-        <div class="module__copy">
-          <div class="section__header"><p class="eyebrow">Experience</p><h2>Eine ruhige Reise zu euren Lieblingsbildern</h2></div>
-          <p>Vom ersten Gespräch bis zur Lieferung eurer Galerie begleiten wir euch mit Klarheit, Empathie und einer feinen, künstlerischen Handschrift.</p>
-          <div class="service-grid">
-            <div class="service-card"><img src="assets/portfolio/9-IMG_4105.jpg" alt="Couples Session" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Couples</h4><p>Intime Sessions im Abendlicht, inspiriert von eurem Miteinander – leicht, elegant, ungestellt.</p></div></div>
-            <div class="service-card"><img src="assets/portfolio/18-IMG_4322.jpg" alt="Elopement" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Elopements</h4><p>Für kleine Trauungen an besonderen Orten. Wir gestalten eine leise, poetische Bildwelt nur für euch.</p></div></div>
-            <div class="service-card"><img src="assets/portfolio/IMG_4747.jpeg" alt="Intimate Wedding" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Intimate Weddings</h4><p>Reportagen voller Atmosphäre: Vom Getting Ready bis zum letzten Tanz, mit viel Gespür für Zwischentöne.</p></div></div>
-            <div class="service-card"><img src="assets/portfolio/11-IMG_8606.jpg" alt="Lifestyle Session" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Lifestyle Sessions</h4><p>Zuhause oder draußen – Geschichten aus eurem Alltag, stilvoll erzählt und mit Kunstgefühl inszeniert.</p></div></div>
-          </div>
-        </div>
-      </article>
+      <section class="highlights">
+        <div class="section__header"><p class="eyebrow">Highlights</p><h2>Momente, die bleiben</h2></div>
+        <div class="teaser-carousel" data-teaser-carousel><div class="teaser-carousel__viewport"><div class="teaser-carousel__track">
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-01.jpg" alt="Schloss mit Garten und Trauungsbestuhlung" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-07.jpg" alt="Brautpaar auf einer weißen Bank mit Schirm" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-03.jpg" alt="Braut in Schwarz-Weiß im Park" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-02.jpg" alt="Brautstrauß auf Schleier" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-12.jpg" alt="Braut und Vater im Gegenlicht, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-24.jpg" alt="Brautstrauß und Schleier auf einem Stuhl" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-15.jpg" alt="Brautpaar vor dem Eiffelturm im Herbst" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-29.jpg" alt="Festsaal im Glashaus mit Kronleuchtern" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-04.jpg" alt="Brautstrauß aus weißen Rosen vor Hecke" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-13.jpg" alt="Brautpaar vor Steinskulpturen" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-22.jpg" alt="Braut mit Sektglas" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-14.jpg" alt="Braut vor einem schmiedeeisernen Tor in Paris, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-32.jpg" alt="Braut mit Fächer" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-17.jpg" alt="Bräutigam küsst die Hand der Braut, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-05.jpg" alt="Weiße Stühle zur freien Trauung im Garten" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-08.jpg" alt="Brautstrauß und Anstecker im Detail" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-09.jpg" alt="Brautpaar an einer Steinbalustrade unter Bäumen" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-30.jpg" alt="Ablaufplan und Menükarte im Gras" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-18.jpg" alt="Brautpaar im Saal, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-20.jpg" alt="Braut jubelt mit Brautstrauß vor der Kirche" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-23.jpg" alt="Brautpaar auf der Treppe, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-16.jpg" alt="Spitzenkleid und Brautstrauß mit Perlen" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-33.jpg" alt="Brautpaar küsst sich auf einer Wiese" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-25.jpg" alt="Sekt im Kühler beim Empfang" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-06.jpg" alt="Brautpaar vor einer Hecke in Paris" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-34.jpg" alt="Tischdeko mit Blumen und Kerzen" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-11.jpg" alt="Braut mit Collier und Verlobungsring" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-26.jpg" alt="Brautpaar während der Trauung, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-19.jpg" alt="Brautpaar auf der Treppe mit Spitzenschleier" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-28.jpg" alt="Kuss auf einer Brücke in Paris, schwarz-weiß" loading="lazy"></figure>
+            <figure class="teaser-carousel__slide"><img src="assets/highlights/highlight-27.jpg" alt="Eheringe auf dem Brautstrauß" loading="lazy"></figure>
+        </div></div><button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button><button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button></div>
+      </section>
 
       <article class="module module--embed">
         <div class="module__copy">
           <div class="section__header"><p class="eyebrow">Portfolio</p><h2>Ein Einblick in unsere Arbeit</h2></div>
           <p>Von ruhigen Elopements bis zu großen Reportagen – stöbert durch ausgewählte Momente aus unseren letzten Hochzeiten.</p>
-          <div class="teaser-carousel" data-teaser-carousel><div class="teaser-carousel__viewport"><div class="teaser-carousel__track">
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/27-IMG_4450.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/IMG_4699.jpeg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/5-IMG_7829.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/33-IMG_4597.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/IMG_4615.jpeg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/9-IMG_7869.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/25-IMG_4429.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
-          </div></div><button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button><button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button></div>
-          <a class="btn insta-link" href="portfolio.html">Ganzes Portfolio ansehen</a>
-        </div>
-      </article>
-
-      <article class="module module--overlay module--overlay-secondary"><img class="module__overlay-img" src="assets/home/paar.jpg" alt="Paar im Licht" loading="lazy"><div class="module__overlay-copy"><p class="eyebrow">Statement</p><h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</h3><p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p></div></article>
-
-      <article class="module module--embed">
-        <div class="module__copy">
-          <div class="section__header"><p class="eyebrow">Instagram</p><h2>Neu auf Instagram</h2></div>
-          <p>Frische Eindrücke und Highlights – mehr seht ihr auf Instagram.</p>
-          <div class="insta-embed"><div class="gallery-row insta-grid">
-            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 1"><img src="assets/portfolio/6-IMG_3872.jpg" alt="Instagram Vorschau 1" loading="lazy"></a>
-            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 2"><img src="assets/home/Galerie (2).jpg" alt="Instagram Vorschau 2" loading="lazy"></a>
-            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 3"><img src="assets/portfolio/36-IMG_5650.jpg" alt="Instagram Vorschau 3" loading="lazy"></a>
-            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 4"><img src="assets/home/Galerie (4).jpg" alt="Instagram Vorschau 4" loading="lazy"></a>
-          </div><a class="btn btn--ghost insta-link" href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer">Auf Instagram ansehen</a></div>
+          <a class="btn btn--text insta-link" href="portfolio.html">Ganzes Portfolio ansehen</a>
         </div>
       </article>
     </section>

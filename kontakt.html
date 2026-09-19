@@ -24,12 +24,12 @@
         <a class="nav__link" href="home.html">Home</a>
         <a class="nav__link" href="ueber-uns.html">Über uns</a>
         <a class="nav__link" href="portfolio.html">Portfolio</a>
-        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
         <a class="nav__logo" href="home.html"><span class="nav__logo-mark"><span class="nav__logo-letter">A</span><span class="nav__logo-letter">G</span></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
+        <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
         <a class="nav__link is-active" href="kontakt.html">Kontakt</a>
         <div class="nav__social">
           <!-- Social Media Icons hier einfügen -->
@@ -39,22 +39,12 @@
     </div>
   </nav>
 
-  <header class="hero hero--soft">
-    <div class="hero__image hero__image--contact" role="presentation"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <p class="eyebrow">Kontakt</p>
-      <h1>Lasst uns sprechen</h1>
-      <p class="hero__subtitle">Wir sind für euch da und freuen uns auf eure Geschichte.</p>
-    </div>
-  </header>
-
   <main>
     <section class="section section--light">
       <div class="container contact">
         <div class="contact__intro">
-          <p class="eyebrow">Schreibt uns</p>
-          <h2>Wir freuen uns auf eure Nachricht</h2>
+          <p class="eyebrow">Kontakt</p>
+          <h1 class="contact__title">Get in touch</h1>
           <p>Teilt uns eure Pläne, Wünsche und Daten mit – wir melden uns mit Ideen und einem Gefühl für euren Tag.</p>
         </div>
         <form class="form">
@@ -76,10 +66,41 @@
               <input id="location" name="location" type="text" placeholder="Ort oder Location">
             </div>
           </div>
+          <div class="form__group form__group--two">
+            <div>
+              <label for="hours">Stundenanzahl</label>
+              <select id="hours" name="hours">
+                <option value="">Bitte wählen</option>
+                <option>bis 2 Stunden</option>
+                <option>ca. 4 Stunden</option>
+                <option>ca. 6 Stunden</option>
+                <option>ca. 8 Stunden</option>
+                <option>ganzer Tag (10+ Stunden)</option>
+                <option>noch unsicher</option>
+              </select>
+            </div>
+            <div>
+              <label for="instagram">Instagram-Account</label>
+              <input id="instagram" name="instagram" type="text" placeholder="@euer.account">
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="photos">Fotos von euch</label>
+            <label class="form__upload" for="photos">
+              <input id="photos" name="photos" type="file" accept="image/*" multiple>
+              <span class="form__upload-text">Bilder auswählen oder hierher ziehen</span>
+              <span class="form__upload-files" aria-live="polite"></span>
+            </label>
+            <p class="form__hint">Wir freuen uns immer, wenn wir zur Anfrage auch ein Gesicht vor Augen haben – ein oder zwei Fotos von euch reichen völlig.</p>
+          </div>
           <div class="form__group">
             <label for="message">Nachricht</label>
             <textarea id="message" name="message" rows="5" placeholder="Erzählt uns von euren Plänen"></textarea>
           </div>
+          <label class="form__consent" for="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            <span>Ich bin damit einverstanden, dass meine Angaben und Fotos zur Bearbeitung meiner Anfrage gespeichert und verwendet werden. Die Daten werden nicht an Dritte weitergegeben und nach Abschluss der Anfrage gelöscht. Ich kann meine Einwilligung jederzeit per E-Mail widerrufen.*</span>
+          </label>
           <button class="btn" type="submit">Nachricht senden</button>
         </form>
         <div class="contact__details">
