@@ -192,22 +192,46 @@ function initPortfolioFilter() {
     });
 
     coverButtons.forEach((btn) => {
-      const isActive = btn.dataset.filter === filter;
-      btn.classList.toggle('is-active', isActive);
-      btn.hidden = Boolean(filter) && !isActive;
+      btn.classList.toggle('is-active', btn.dataset.filter === filter);
     });
 
-    if (coverGrid) {
-      coverGrid.classList.toggle('is-single', Boolean(filter));
-    }
+    // In einer geöffneten Galerie nur die Bilder zeigen, keine Cover
+    if (coverGrid) coverGrid.hidden = Boolean(filter);
 
     gallery.classList.add('is-visible');
   }
 
+  // Zurück-Pfeil: erscheint in einer geöffneten Galerie und führt zur Übersicht aller Galerien
+  const backButton = document.createElement('button');
+  backButton.type = 'button';
+  backButton.className = 'portfolio-back';
+  backButton.hidden = true;
+  backButton.innerHTML = '<span aria-hidden="true">&larr;</span> Alle Galerien';
+  coverGrid?.parentNode.insertBefore(backButton, coverGrid);
+
+  function showOverview() {
+    images.forEach((img) => {
+      img.parentElement.hidden = true;
+      img.parentElement.style.display = 'none';
+    });
+    coverButtons.forEach((btn) => btn.classList.remove('is-active'));
+    if (coverGrid) coverGrid.hidden = false;
+    gallery.classList.remove('is-visible');
+    backButton.hidden = true;
+    (coverGrid || gallery).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    backButton.innerHTML = '<span aria-hidden="true">&larr;</span> Alle Galerien';
+  }
+
+  backButton.addEventListener('click', showOverview);
+
   coverButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
+      const name = btn.querySelector('strong')?.textContent || '';
       showFilter(filter);
+      backButton.innerHTML = `<span aria-hidden="true">&larr;</span> Alle Galerien${name ? `<em>${name}</em>` : ''}`;
+      backButton.hidden = false;
+      backButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
@@ -370,7 +394,7 @@ function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const items = document.querySelectorAll(
-    'main .eyebrow, main h2, main p, main .story__names, main .story__mark, main .service-item, main .callout .btn, main .insta-link'
+    'main .eyebrow, main h2, main p, main .story__names, main .service-item, main .callout .btn, main .insta-link'
   );
 
   const observer = new IntersectionObserver((entries) => {
@@ -395,6 +419,53 @@ function initScrollReveal() {
   onCleanup(() => observer.disconnect());
 }
 
+// ----- Über uns: die beiden Kreise („Ay“ + „La“) fahren je nach Scrollposition zusammen -----
+function initCircleJoin() {
+  const mark = document.querySelector('.story__mark');
+  if (!mark) return;
+  const left = mark.querySelector('.story__mark-left');
+  const right = mark.querySelector('.story__mark-right');
+  const name = mark.querySelector('.story__mark-name');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const maxShift = 46; // Abstand je Kreis im getrennten Zustand (SVG-Einheiten)
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const rect = mark.getBoundingClientRect();
+    const vh = window.innerHeight || 1;
+    // 0 = Zeichen taucht unten auf, 1 = Mitte des Zeichens hat die Bildschirmmitte erreicht
+    const start = vh;
+    const end = vh * 0.5;
+    const center = rect.top + rect.height / 2;
+    const progress = Math.min(Math.max((start - center) / (start - end), 0), 1);
+    const eased = 1 - Math.pow(1 - progress, 2);
+
+    const shift = (1 - eased) * maxShift;
+    left.style.transform = `translateX(${-shift}px)`;
+    right.style.transform = `translateX(${shift}px)`;
+    left.style.opacity = right.style.opacity = String(0.4 + 0.6 * eased);
+    // Name erscheint erst im letzten Stück
+    name.style.opacity = String(Math.min(Math.max((progress - 0.75) / 0.25, 0), 1));
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onCleanup(() => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+  });
+  update();
+}
+
 // Alles, was pro Seite neu eingerichtet werden muss
 function initPage() {
   initPageLoader();
@@ -407,6 +478,7 @@ function initPage() {
   initContactForm();
   initHeroParallax();
   initScrollReveal();
+  initCircleJoin();
 }
 
 // ===== Ruhige Hintergrundmusik (assets/audio/hintergrund.mp3) =====
