@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page" data-page="home">
+  <div class="page-loader" aria-hidden="true">
+    <div class="page-loader__logo">
+      <span class="page-loader__mark"><span>A</span><span>G</span></span>
+      <span class="page-loader__name" aria-label="Aylagraphy"><span>A</span><span>y</span><span>l</span><span>a</span><span>g</span><span>r</span><span>a</span><span>p</span><span>h</span><span>y</span></span>
+    </div>
+  </div>
+
   <nav class="nav">
     <div class="nav__inner">
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links-left nav-links-right">
@@ -27,7 +34,7 @@
         <a class="nav__link" href="preise-info.html">Preise &amp; Info</a>
       </div>
       <div class="nav__brand">
-        <a class="nav__logo" href="home.html"><span class="nav__logo-mark">AG</span><span class="nav__logo-divider" aria-hidden="true"></span><span class="nav__logo-text">Aylagraphy</span></a>
+        <a class="nav__logo" href="home.html"><span class="nav__logo-mark"><span class="nav__logo-letter">A</span><span class="nav__logo-letter">G</span></span><span class="nav__logo-text">Aylagraphy</span></a>
       </div>
       <div class="nav__links nav__links--right" id="nav-links-right">
         <a class="nav__link" href="kontakt.html">Kontakt</a>
@@ -61,142 +68,58 @@
 
     <section class="content-stream">
       <article class="module module--split-left">
-        <div class="module__media media--tall">
-          <img src="assets/portfolio/IMG_4569.jpeg" alt="Ein Paar im Abendlicht" loading="lazy">
-        </div>
+        <div class="module__media media--tall"><img src="assets/portfolio/IMG_4569.jpeg" alt="Ein Paar im Abendlicht" loading="lazy"></div>
         <div class="module__copy">
-          <div class="section__header">
-            <p class="eyebrow">Unser Ansatz</p>
-            <h2>Sanfte Geschichten, liebevoll festgehalten</h2>
-          </div>
+          <div class="section__header"><p class="eyebrow">Unser Ansatz</p><h2>Sanfte Geschichten, liebevoll festgehalten</h2></div>
           <p>Wir glauben an Bilder, die atmen. An zarte Bewegungen, stille Gesten und Momente voller Gefühl. Mit viel Ruhe und einem Blick für Details dokumentieren wir eure Geschichte, damit ihr sie immer wieder neu erleben könnt.</p>
           <p>Unsere Arbeitsweise ist unaufdringlich: Wir lassen Raum, beobachten, führen nur sanft, wenn es euch hilft. So entstehen authentische Portraits, die wie von selbst passieren – mit einer Ästhetik, die zeitlos bleibt.</p>
         </div>
       </article>
 
       <article class="module module--split-right">
-        <div class="module__media media--tall">
-          <img src="assets/portfolio/4-IMG_7877.jpg" alt="Brautpaar im Innenraum" loading="lazy">
-        </div>
+        <div class="module__media media--tall"><img src="assets/portfolio/4-IMG_7877.jpg" alt="Brautpaar im Innenraum" loading="lazy"></div>
         <div class="module__copy">
-          <div class="section__header">
-            <p class="eyebrow">Experience</p>
-            <h2>Eine ruhige Reise zu euren Lieblingsbildern</h2>
-          </div>
+          <div class="section__header"><p class="eyebrow">Experience</p><h2>Eine ruhige Reise zu euren Lieblingsbildern</h2></div>
           <p>Vom ersten Gespräch bis zur Lieferung eurer Galerie begleiten wir euch mit Klarheit, Empathie und einer feinen, künstlerischen Handschrift.</p>
           <div class="service-grid">
-            <div class="service-card">
-              <img src="assets/portfolio/9-IMG_4105.jpg" alt="Couples Session" loading="lazy">
-              <div class="service-card__overlay"></div>
-              <div class="service-card__copy">
-                <h4>Couples</h4>
-                <p>Intime Sessions im Abendlicht, inspiriert von eurem Miteinander – leicht, elegant, ungestellt.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <img src="assets/portfolio/18-IMG_4322.jpg" alt="Elopement" loading="lazy">
-              <div class="service-card__overlay"></div>
-              <div class="service-card__copy">
-                <h4>Elopements</h4>
-                <p>Für kleine Trauungen an besonderen Orten. Wir gestalten eine leise, poetische Bildwelt nur für euch.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <img src="assets/portfolio/IMG_4747.jpeg" alt="Intimate Wedding" loading="lazy">
-              <div class="service-card__overlay"></div>
-              <div class="service-card__copy">
-                <h4>Intimate Weddings</h4>
-                <p>Reportagen voller Atmosphäre: Vom Getting Ready bis zum letzten Tanz, mit viel Gespür für Zwischentöne.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <img src="assets/portfolio/11-IMG_8606.jpg" alt="Lifestyle Session" loading="lazy">
-              <div class="service-card__overlay"></div>
-              <div class="service-card__copy">
-                <h4>Lifestyle Sessions</h4>
-                <p>Zuhause oder draußen – Geschichten aus eurem Alltag, stilvoll erzählt und mit Kunstgefühl inszeniert.</p>
-              </div>
-            </div>
+            <div class="service-card"><img src="assets/portfolio/9-IMG_4105.jpg" alt="Couples Session" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Couples</h4><p>Intime Sessions im Abendlicht, inspiriert von eurem Miteinander – leicht, elegant, ungestellt.</p></div></div>
+            <div class="service-card"><img src="assets/portfolio/18-IMG_4322.jpg" alt="Elopement" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Elopements</h4><p>Für kleine Trauungen an besonderen Orten. Wir gestalten eine leise, poetische Bildwelt nur für euch.</p></div></div>
+            <div class="service-card"><img src="assets/portfolio/IMG_4747.jpeg" alt="Intimate Wedding" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Intimate Weddings</h4><p>Reportagen voller Atmosphäre: Vom Getting Ready bis zum letzten Tanz, mit viel Gespür für Zwischentöne.</p></div></div>
+            <div class="service-card"><img src="assets/portfolio/11-IMG_8606.jpg" alt="Lifestyle Session" loading="lazy"><div class="service-card__overlay"></div><div class="service-card__copy"><h4>Lifestyle Sessions</h4><p>Zuhause oder draußen – Geschichten aus eurem Alltag, stilvoll erzählt und mit Kunstgefühl inszeniert.</p></div></div>
           </div>
         </div>
       </article>
 
       <article class="module module--embed">
         <div class="module__copy">
-          <div class="section__header">
-            <p class="eyebrow">Portfolio</p>
-            <h2>Ein Einblick in unsere Arbeit</h2>
-          </div>
+          <div class="section__header"><p class="eyebrow">Portfolio</p><h2>Ein Einblick in unsere Arbeit</h2></div>
           <p>Von ruhigen Elopements bis zu großen Reportagen – stöbert durch ausgewählte Momente aus unseren letzten Hochzeiten.</p>
-          <div class="teaser-carousel" data-teaser-carousel>
-            <div class="teaser-carousel__viewport">
-              <div class="teaser-carousel__track">
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/27-IMG_4450.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/IMG_4699.jpeg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/5-IMG_7829.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/33-IMG_4597.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/IMG_4615.jpeg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/9-IMG_7869.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-                <a class="teaser-carousel__slide" href="portfolio.html">
-                  <img src="assets/portfolio/25-IMG_4429.jpg" alt="Portfolio Vorschau" loading="lazy">
-                </a>
-              </div>
-            </div>
-            <button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button>
-            <button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button>
-          </div>
+          <div class="teaser-carousel" data-teaser-carousel><div class="teaser-carousel__viewport"><div class="teaser-carousel__track">
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/27-IMG_4450.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/16-IMG_4240.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/IMG_4699.jpeg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/5-IMG_7829.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/33-IMG_4597.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/IMG_4615.jpeg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/9-IMG_7869.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+            <a class="teaser-carousel__slide" href="portfolio.html"><img src="assets/portfolio/25-IMG_4429.jpg" alt="Portfolio Vorschau" loading="lazy"></a>
+          </div></div><button class="teaser-carousel__control teaser-carousel__control--prev" aria-label="Zurück" type="button">&lsaquo;</button><button class="teaser-carousel__control teaser-carousel__control--next" aria-label="Weiter" type="button">&rsaquo;</button></div>
           <a class="btn insta-link" href="portfolio.html">Ganzes Portfolio ansehen</a>
         </div>
       </article>
 
-      <article class="module module--overlay module--overlay-secondary">
-        <img class="module__overlay-img" src="assets/home/paar.jpg" alt="Paar im Licht" loading="lazy">
-        <div class="module__overlay-copy">
-          <p class="eyebrow">Statement</p>
-          <h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</h3>
-          <p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p>
-        </div>
-      </article>
+      <article class="module module--overlay module--overlay-secondary"><img class="module__overlay-img" src="assets/home/paar.jpg" alt="Paar im Licht" loading="lazy"><div class="module__overlay-copy"><p class="eyebrow">Statement</p><h3>„Unsere Bilder wirken wie ein warmer Sommerabend – leise, ehrlich und voller Licht.“</h3><p>Fein, modern und kantig zugleich: Wir gestalten eine visuelle Erzählung, die euch in Erinnerungen eintauchen lässt.</p></div></article>
 
       <article class="module module--embed">
         <div class="module__copy">
-          <div class="section__header">
-            <p class="eyebrow">Instagram</p>
-            <h2>Neu auf Instagram</h2>
-          </div>
+          <div class="section__header"><p class="eyebrow">Instagram</p><h2>Neu auf Instagram</h2></div>
           <p>Frische Eindrücke und Highlights – mehr seht ihr auf Instagram.</p>
-          <div class="insta-embed">
-            <div class="gallery-row insta-grid">
-              <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 1">
-                <img src="assets/portfolio/6-IMG_3872.jpg" alt="Instagram Vorschau 1" loading="lazy">
-              </a>
-              <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 2">
-                <img src="assets/home/Galerie (2).jpg" alt="Instagram Vorschau 2" loading="lazy">
-              </a>
-              <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 3">
-                <img src="assets/portfolio/36-IMG_5650.jpg" alt="Instagram Vorschau 3" loading="lazy">
-              </a>
-              <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 4">
-                <img src="assets/home/Galerie (4).jpg" alt="Instagram Vorschau 4" loading="lazy">
-              </a>
-            </div>
-            <a class="btn btn--ghost insta-link" href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer">Auf Instagram ansehen</a>
-          </div>
+          <div class="insta-embed"><div class="gallery-row insta-grid">
+            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 1"><img src="assets/portfolio/6-IMG_3872.jpg" alt="Instagram Vorschau 1" loading="lazy"></a>
+            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 2"><img src="assets/home/Galerie (2).jpg" alt="Instagram Vorschau 2" loading="lazy"></a>
+            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 3"><img src="assets/portfolio/36-IMG_5650.jpg" alt="Instagram Vorschau 3" loading="lazy"></a>
+            <a href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bild 4"><img src="assets/home/Galerie (4).jpg" alt="Instagram Vorschau 4" loading="lazy"></a>
+          </div><a class="btn btn--ghost insta-link" href="https://www.instagram.com/ayla.graphy" target="_blank" rel="noopener noreferrer">Auf Instagram ansehen</a></div>
         </div>
       </article>
     </section>

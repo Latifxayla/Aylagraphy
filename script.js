@@ -3,6 +3,13 @@ const navLinksGroups = document.querySelectorAll('.nav__links');
 const accordionGroups = document.querySelectorAll('[data-accordion]');
 const navBar = document.querySelector('.nav');
 
+const pageLoader = document.querySelector('.page-loader');
+if (pageLoader) {
+  window.addEventListener('load', () => {
+    window.setTimeout(() => pageLoader.classList.add('is-hidden'), 4800);
+  });
+}
+
 function closeNavOnResize() {
   if (window.innerWidth > 960) {
     navLinksGroups.forEach((g) => g.classList.remove('is-open'));
@@ -42,6 +49,40 @@ accordionGroups.forEach((group) => {
     });
   });
 });
+
+function initPortfolioHoverLabels() {
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) return;
+
+  const namesByCategory = {
+    'reportage-1': 'Emma & Dilsin',
+    'reportage-2': 'Simay & Koray',
+    'reportage-3': 'Hielay & Oguzhan',
+    'reportage-4': 'Lina & Elias',
+    'reportage-5': 'Jana & Noah'
+  };
+
+  Array.from(gallery.querySelectorAll('img')).forEach((img) => {
+    const figure = img.closest('figure');
+    if (!figure) {
+      const wrapper = document.createElement('figure');
+      wrapper.className = 'gallery__item';
+      img.parentNode.insertBefore(wrapper, img);
+      wrapper.appendChild(img);
+    }
+
+    const targetFigure = img.closest('figure');
+    let caption = targetFigure.querySelector('figcaption');
+    if (!caption) {
+      caption = document.createElement('figcaption');
+      targetFigure.appendChild(caption);
+    }
+
+    const category = img.dataset.category || 'reportage-1';
+    const name = img.dataset.couple || namesByCategory[category] || 'Brautpaar';
+    caption.textContent = name;
+  });
+}
 
 function initLightbox() {
   const lightbox = document.getElementById('lightbox');
@@ -101,20 +142,37 @@ function initLightbox() {
 initLightbox();
 
 function initPortfolioFilter() {
-  const filterBar = document.querySelector('.portfolio-filter');
+  const coverButtons = document.querySelectorAll('.portfolio-cover');
   const gallery = document.querySelector('.gallery');
-  if (!filterBar || !gallery) return;
+  const coverGrid = document.querySelector('.portfolio-covers');
+  if (!gallery) return;
 
-  const buttons = Array.from(filterBar.querySelectorAll('.portfolio-filter__btn'));
   const images = Array.from(gallery.querySelectorAll('img'));
 
-  buttons.forEach((btn) => {
+  function showFilter(filter) {
+    images.forEach((img) => {
+      const show = img.dataset.category === filter;
+      img.parentElement.hidden = !show;
+      img.parentElement.style.display = show ? 'block' : 'none';
+    });
+
+    coverButtons.forEach((btn) => {
+      const isActive = btn.dataset.filter === filter;
+      btn.classList.toggle('is-active', isActive);
+      btn.hidden = Boolean(filter) && !isActive;
+    });
+
+    if (coverGrid) {
+      coverGrid.classList.toggle('is-single', Boolean(filter));
+    }
+
+    gallery.classList.add('is-visible');
+  }
+
+  coverButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
-      buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
-      images.forEach((img) => {
-        img.hidden = filter !== 'all' && img.dataset.category !== filter;
-      });
+      showFilter(filter);
     });
   });
 }
