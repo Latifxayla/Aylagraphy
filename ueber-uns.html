@@ -45,9 +45,36 @@
       <div class="container stack stack--gap">
         <p class="eyebrow">Aylagraphy</p>
         <h2>Zwei Blicke, eine Sprache aus Licht</h2>
-        <p>Wir sind Aylin und Latif Baturalp Akcan – gemeinsam Aylagraphy. Für uns ist jede Hochzeit eine eigene, kleine Welt: ehrlich, ungestellt und einmalig. Was wir als Fotograf*innen von Liebenden, ihren Familien und Freund*innen geschenkt bekommen, berührt uns jedes Mal aufs Neue.</p>
+        <p>Wir sind Aylin und Latif Baturalp Akcan – gemeinsam Aylagraphy. Für uns ist jede Hochzeit eine eigene kleine Welt: ehrlich, ungestellt und einmalig.</p>
         <p>Wir arbeiten als Paar – im Leben wie hinter der Kamera. Diese Nähe spürt man in unseren Bildern: viel Ruhe, ein Gespür für den richtigen Moment und der Mut, echte Emotionen einzufangen statt sie zu inszenieren.</p>
-        <p>Ob große Feier oder kleines Elopement – wir begleiten euch mit Klarheit, Empathie und einer feinen, künstlerischen Handschrift, die euren Tag so festhält, wie er wirklich war.</p>
+        <p>Ob große Feier oder kleines Elopement – wir halten euren Tag so fest, wie er wirklich war.</p>
+      </div>
+
+      <!-- „Die Idee“ stand früher in einer eigenen Sektion mit eigenem
+           Hintergrund. Jetzt gehört sie zum Einstieg, damit die Seite
+           weniger Abschnitte hat. -->
+      <div class="container story__idea story__idea--lead">
+        <svg class="story__mark" viewBox="0 0 300 180" role="img" aria-label="Zwei überlappende Kreise: links Ay, rechts La, in der Mitte Aylagraphy">
+          <g class="story__mark-left">
+            <circle cx="112" cy="90" r="82" />
+            <text class="story__mark-part" x="62" y="102" text-anchor="middle">Ay</text>
+          </g>
+          <g class="story__mark-right">
+            <circle cx="188" cy="90" r="82" />
+            <text class="story__mark-part" x="238" y="102" text-anchor="middle">La</text>
+          </g>
+          <text class="story__mark-name" x="150" y="95" text-anchor="middle">Aylagraphy</text>
+        </svg>
+        <div class="stack stack--gap">
+          <p class="eyebrow">Die Idee</p>
+          <h2 class="story__title">Wo aus zwei Blickwinkeln<br><em>eine Geschichte wird.</em></h2>
+          <div class="story__text">
+            <p>Unser Zeichen erzählt von Verbindung. Zwei Kreise, zwei Menschen, zwei Blickwinkel – dort, wo sie sich überschneiden, entsteht Aylagraphy. Ein Blick, den keiner von uns allein hätte.</p>
+            <p>Das „&amp;“ ist kein Detail. Es ist unsere Geschichte.</p>
+          </div>
+          <p class="story__signoff">Nicht nur fotografiert. <em>Sondern gefühlt.</em></p>
+          <p class="story__claim">made together. remembered forever.</p>
+        </div>
       </div>
     </section>
 
@@ -58,8 +85,7 @@
           <p class="eyebrow">Der Ursprung</p>
           <h2 class="story__title">Nicht nur ein Name.<br><em>Unser gemeinsamer Blick.</em></h2>
           <div class="story__text">
-            <p>Aylagraphy begann mit Aylin. Doch die Geschichte dahinter wurde zu unserer.</p>
-            <p>Aylin &amp; Latif. Zwei Menschen. Zwei Perspektiven. Gemeinsam Aylagraphy.</p>
+            <p>Aylagraphy begann mit Aylin. Die Geschichte dahinter wurde zu unserer.</p>
             <p>Wir halten nicht einfach Augenblicke fest. Wir bewahren das Gefühl, das in ihnen steckt.</p>
           </div>
           <div class="story__names" aria-label="Aylin meets Latif – Aylagraphy">
@@ -79,31 +105,12 @@
       </div>
     </section>
 
-    <section class="section story story--idea">
-      <div class="container story__idea">
-        <svg class="story__mark" viewBox="0 0 300 180" role="img" aria-label="Zwei überlappende Kreise: links Ay, rechts La, in der Mitte Aylagraphy">
-          <g class="story__mark-left">
-            <circle cx="112" cy="90" r="82" />
-            <text class="story__mark-part" x="62" y="102" text-anchor="middle">Ay</text>
-          </g>
-          <g class="story__mark-right">
-            <circle cx="188" cy="90" r="82" />
-            <text class="story__mark-part" x="238" y="102" text-anchor="middle">La</text>
-          </g>
-          <text class="story__mark-name" x="150" y="95" text-anchor="middle">Aylagraphy</text>
-        </svg>
-        <div class="stack stack--gap">
-          <p class="eyebrow">Die Idee</p>
-          <h2 class="story__title">Wo aus zwei Blickwinkeln<br><em>eine Geschichte wird.</em></h2>
-          <div class="story__text">
-            <p>Keine klassische Kamera. Keine offensichtliche Linse. Unser Zeichen erzählt stattdessen von Verbindung: Zwei Kreise stehen für zwei Menschen und zwei Perspektiven. Ihre Überschneidung ist der Ort, an dem Aylagraphy entsteht.</p>
-            <p>Das „&amp;“ ist kein Detail. Es ist unsere Geschichte.</p>
-          </div>
-          <p class="story__signoff">Nicht nur fotografiert. <em>Sondern gefühlt.</em></p>
-          <p class="story__claim">made together. remembered forever.</p>
-        </div>
-      </div>
-    </section>
+    <!-- Leiser Zwischenruf: Linie zeichnet sich, dann steigt die Frage auf -->
+    <aside class="quiet-question">
+      <span class="quiet-question__line" aria-hidden="true"></span>
+      <p class="quiet-question__text">Wer seid ihr, wenn gerade niemand hinsieht?</p>
+      <span class="quiet-question__line quiet-question__line--below" aria-hidden="true"></span>
+    </aside>
 
     <section class="section section--callout">
       <div class="container callout">
@@ -132,6 +139,12 @@
         <button class="footer__legal" type="button" data-open-dialog="impressum">Impressum</button>
       </div>
     </div>
+    <!-- Benennt das Licht zur Ortszeit der Besucherin; Text setzt script.js -->
+    <p class="light-now" data-light-now hidden>
+      <span class="light-now__arc" aria-hidden="true"><span class="light-now__dot"></span></span>
+      <span class="light-now__text"></span>
+    </p>
+
     <!-- Impressum: Platzhalter in [eckigen Klammern] durch echte Angaben ersetzen -->
     <dialog class="legal-dialog" id="impressum" aria-labelledby="impressum-title">
       <button class="legal-dialog__close" type="button" data-close-dialog aria-label="Impressum schließen">&times;</button>

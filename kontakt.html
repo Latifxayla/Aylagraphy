@@ -109,6 +109,47 @@
         </div>
       </div>
     </section>
+    <!-- ===== Verfügbarkeit =====
+         HIER die Termine pflegen. Format: JJJJ-MM-TT, durch Komma getrennt.
+         data-gebucht   = fest vergeben
+         data-angefragt = angefragt, noch nicht bestätigt
+         Die Listen stehen bewusst hier im HTML und nicht im Skript: So bleiben
+         sie beim Seitenwechsel ohne Neuladen erhalten und sind leicht zu finden. -->
+    <section class="section section--light" aria-labelledby="verfuegbarkeit-titel">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Verfügbarkeit</p>
+          <h2 id="verfuegbarkeit-titel">Welche Tage noch frei sind</h2>
+        </div>
+
+        <div class="calendar" data-calendar
+             data-gebucht="2026-10-03, 2026-10-24, 2026-11-14, 2027-05-01, 2027-05-22, 2027-06-12, 2027-07-03, 2027-07-24, 2027-08-14, 2027-09-04, 2027-09-25"
+             data-angefragt="2026-10-10, 2027-05-15, 2027-06-19">
+          <div class="calendar__head">
+            <button class="calendar__nav" type="button" data-calendar-prev aria-label="Voriger Monat">&lsaquo;</button>
+            <p class="calendar__month" data-calendar-month aria-live="polite"></p>
+            <button class="calendar__nav" type="button" data-calendar-next aria-label="Nächster Monat">&rsaquo;</button>
+          </div>
+
+          <div class="calendar__grid" data-calendar-grid></div>
+
+          <ul class="calendar__legend">
+            <li><span class="calendar__key calendar__key--frei" aria-hidden="true"></span>frei</li>
+            <li><span class="calendar__key calendar__key--angefragt" aria-hidden="true"></span>angefragt</li>
+            <li><span class="calendar__key calendar__key--vergeben" aria-hidden="true"></span>vergeben</li>
+          </ul>
+
+          <p class="calendar__hint">Wählt einen freien Tag – wir übernehmen ihn oben ins Formular.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leiser Zwischenruf: Linie zeichnet sich, dann steigt die Frage auf -->
+    <aside class="quiet-question">
+      <span class="quiet-question__line" aria-hidden="true"></span>
+      <p class="quiet-question__text">Wie soll sich euer Tag anfühlen?</p>
+      <span class="quiet-question__line quiet-question__line--below" aria-hidden="true"></span>
+    </aside>
   </main>
 
   <footer class="footer">
@@ -126,6 +167,12 @@
         <button class="footer__legal" type="button" data-open-dialog="impressum">Impressum</button>
       </div>
     </div>
+    <!-- Benennt das Licht zur Ortszeit der Besucherin; Text setzt script.js -->
+    <p class="light-now" data-light-now hidden>
+      <span class="light-now__arc" aria-hidden="true"><span class="light-now__dot"></span></span>
+      <span class="light-now__text"></span>
+    </p>
+
     <!-- Impressum: Platzhalter in [eckigen Klammern] durch echte Angaben ersetzen -->
     <dialog class="legal-dialog" id="impressum" aria-labelledby="impressum-title">
       <button class="legal-dialog__close" type="button" data-close-dialog aria-label="Impressum schließen">&times;</button>

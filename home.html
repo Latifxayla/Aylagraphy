@@ -129,6 +129,12 @@
         </div>
       </article>
     </section>
+    <!-- Leiser Zwischenruf: Linie zeichnet sich, dann steigt die Frage auf -->
+    <aside class="quiet-question">
+      <span class="quiet-question__line" aria-hidden="true"></span>
+      <p class="quiet-question__text">Woran werdet ihr euch in zehn Jahren zuerst erinnern?</p>
+      <span class="quiet-question__line quiet-question__line--below" aria-hidden="true"></span>
+    </aside>
   </main>
 
   <footer class="footer">
@@ -146,6 +152,12 @@
         <button class="footer__legal" type="button" data-open-dialog="impressum">Impressum</button>
       </div>
     </div>
+    <!-- Benennt das Licht zur Ortszeit der Besucherin; Text setzt script.js -->
+    <p class="light-now" data-light-now hidden>
+      <span class="light-now__arc" aria-hidden="true"><span class="light-now__dot"></span></span>
+      <span class="light-now__text"></span>
+    </p>
+
     <!-- Impressum: Platzhalter in [eckigen Klammern] durch echte Angaben ersetzen -->
     <dialog class="legal-dialog" id="impressum" aria-labelledby="impressum-title">
       <button class="legal-dialog__close" type="button" data-close-dialog aria-label="Impressum schließen">&times;</button>

@@ -310,17 +310,51 @@ function initTeaserCarousels() {
     nextBtn?.addEventListener('click', next);
     prevBtn?.addEventListener('click', prev);
 
-    let timer = setInterval(next, 4200);
-    carousel.addEventListener('mouseenter', () => clearInterval(timer));
-    carousel.addEventListener('mouseleave', () => {
+    let timer = null;
+
+    function startTimer() {
       clearInterval(timer);
       timer = setInterval(next, 4200);
-    });
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function resetToFirst() {
+      index = n;
+      render(false);
+    }
+
+    carousel.addEventListener('mouseenter', stopTimer);
+    carousel.addEventListener('mouseleave', startTimer);
+
+    // Das Karussell steht weit unten auf der Seite. Liefe der Timer schon ab
+    // dem Seitenaufruf, wäre es beim Hinunterscrollen längst weitergesprungen.
+    // Deshalb: erst starten, wenn es sichtbar wird – und dabei auf das
+    // erste Bild zurücksetzen.
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            resetToFirst();
+            startTimer();
+          } else {
+            stopTimer();
+          }
+        });
+      }, { threshold: 0.4 });
+      observer.observe(carousel);
+      onCleanup(() => observer.disconnect());
+    } else {
+      startTimer();
+    }
 
     const onResize = () => render(false);
     window.addEventListener('resize', onResize);
     onCleanup(() => {
-      clearInterval(timer);
+      stopTimer();
       window.removeEventListener('resize', onResize);
     });
   });
@@ -506,6 +540,172 @@ function initCompareSliders() {
 }
 
 // Alles, was pro Seite neu eingerichtet werden muss
+// ----- Extra: die leise Frage erscheint beim Hereinscrollen -----
+function initQuietQuestion() {
+  const frage = document.querySelector('.quiet-question');
+  if (!frage) return;
+  if (!('IntersectionObserver' in window)) {
+    frage.classList.add('is-visible');
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.25 });
+
+  observer.observe(frage);
+  onCleanup(() => observer.disconnect());
+}
+
+// ----- Extra: benennt das Licht, in dem die Besucherin gerade sitzt -----
+function initLightNow() {
+  const zeile = document.querySelector('[data-light-now]');
+  if (!zeile) return;
+  const punkt = zeile.querySelector('.light-now__dot');
+  const text = zeile.querySelector('.light-now__text');
+  if (!punkt || !text) return;
+
+  // Grenzen in Stunden der Ortszeit; das letzte Stück läuft über Mitternacht.
+  const phasen = [
+    { bis: 5,    name: 'Nachtlicht' },
+    { bis: 6.5,  name: 'Blaue Stunde' },
+    { bis: 8,    name: 'Erstes Licht' },
+    { bis: 11,   name: 'Morgenlicht' },
+    { bis: 15,   name: 'Mittagslicht' },
+    { bis: 17.5, name: 'Nachmittagslicht' },
+    { bis: 19.5, name: 'Goldene Stunde' },
+    { bis: 21,   name: 'Blaue Stunde' },
+    { bis: 24,   name: 'Nachtlicht' }
+  ];
+
+  function aktualisieren() {
+    const jetzt = new Date();
+    const stunde = jetzt.getHours() + jetzt.getMinutes() / 60;
+    const phase = phasen.find((p) => stunde < p.bis) || phasen[phasen.length - 1];
+    text.textContent = 'Bei euch gerade: ' + phase.name;
+    punkt.style.left = (stunde / 24) * 100 + '%';
+    zeile.hidden = false;
+  }
+
+  aktualisieren();
+  // Alle fünf Minuten nachziehen, falls die Seite lange offen bleibt.
+  const timer = setInterval(aktualisieren, 300000);
+  onCleanup(() => clearInterval(timer));
+}
+
+// ----- Kontakt: Kalender mit freien und vergebenen Terminen -----
+function initAvailabilityCalendar() {
+  const kalender = document.querySelector('[data-calendar]');
+  if (!kalender) return;
+  const raster = kalender.querySelector('[data-calendar-grid]');
+  const titel = kalender.querySelector('[data-calendar-month]');
+  const zurueck = kalender.querySelector('[data-calendar-prev]');
+  const vor = kalender.querySelector('[data-calendar-next]');
+  if (!raster || !titel) return;
+
+  const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+                  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+  const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
+
+  function liste(attribut) {
+    return new Set((kalender.dataset[attribut] || '')
+      .split(',')
+      .map((eintrag) => eintrag.trim())
+      .filter(Boolean));
+  }
+
+  const gebucht = liste('gebucht');
+  const angefragt = liste('angefragt');
+
+  // Ortszeit statt toISOString – sonst kippt das Datum je nach Zeitzone.
+  function schluessel(jahr, monat, tag) {
+    return jahr + '-' + String(monat + 1).padStart(2, '0') + '-' + String(tag).padStart(2, '0');
+  }
+
+  const heute = new Date();
+  const heuteSchluessel = schluessel(heute.getFullYear(), heute.getMonth(), heute.getDate());
+  const ersterMonat = new Date(heute.getFullYear(), heute.getMonth(), 1);
+  let sicht = new Date(ersterMonat);
+
+  function zeichnen() {
+    const jahr = sicht.getFullYear();
+    const monat = sicht.getMonth();
+    titel.textContent = MONATE[monat] + ' ' + jahr;
+
+    raster.textContent = '';
+
+    WOCHENTAGE.forEach((tag) => {
+      const zelle = document.createElement('span');
+      zelle.className = 'calendar__weekday';
+      zelle.textContent = tag;
+      raster.appendChild(zelle);
+    });
+
+    // Woche beginnt montags: Sonntag (0) ans Ende schieben
+    const versatz = (new Date(jahr, monat, 1).getDay() + 6) % 7;
+    for (let i = 0; i < versatz; i += 1) {
+      const leer = document.createElement('span');
+      leer.className = 'calendar__day calendar__day--empty';
+      raster.appendChild(leer);
+    }
+
+    const tageImMonat = new Date(jahr, monat + 1, 0).getDate();
+    for (let tag = 1; tag <= tageImMonat; tag += 1) {
+      const datum = schluessel(jahr, monat, tag);
+      const vergangen = datum < heuteSchluessel;
+      let zustand = 'frei';
+      if (vergangen) zustand = 'vergangen';
+      else if (gebucht.has(datum)) zustand = 'vergeben';
+      else if (angefragt.has(datum)) zustand = 'angefragt';
+
+      const waehlbar = zustand === 'frei';
+      const zelle = document.createElement(waehlbar ? 'button' : 'span');
+      zelle.className = 'calendar__day calendar__day--' + zustand;
+      zelle.textContent = String(tag);
+      if (waehlbar) {
+        zelle.type = 'button';
+        zelle.dataset.date = datum;
+        zelle.setAttribute('aria-label', tag + '. ' + MONATE[monat] + ' ' + jahr + ' – frei');
+      } else if (zustand !== 'vergangen') {
+        zelle.setAttribute('aria-label', tag + '. ' + MONATE[monat] + ' ' + jahr + ' – ' + zustand);
+      }
+      if (datum === heuteSchluessel) zelle.classList.add('is-today');
+      raster.appendChild(zelle);
+    }
+
+    // Nicht in die Vergangenheit blättern
+    const amAnfang = jahr === ersterMonat.getFullYear() && monat === ersterMonat.getMonth();
+    if (zurueck) zurueck.disabled = amAnfang;
+  }
+
+  function blaettern(schritte) {
+    sicht = new Date(sicht.getFullYear(), sicht.getMonth() + schritte, 1);
+    zeichnen();
+  }
+
+  zurueck?.addEventListener('click', () => blaettern(-1));
+  vor?.addEventListener('click', () => blaettern(1));
+
+  // Ein freier Tag wandert ins Datumsfeld des Formulars
+  raster.addEventListener('click', (event) => {
+    const tag = event.target.closest('[data-date]');
+    if (!tag) return;
+    const feld = document.querySelector('#date');
+    if (!feld) return;
+    feld.value = tag.dataset.date;
+    raster.querySelectorAll('.is-chosen').forEach((el) => el.classList.remove('is-chosen'));
+    tag.classList.add('is-chosen');
+    feld.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    feld.focus({ preventScroll: true });
+  });
+
+  zeichnen();
+}
+
 function initPage() {
   initPageLoader();
   initNav();
@@ -520,6 +720,9 @@ function initPage() {
   initCircleJoin();
   initLegalDialogs();
   initCompareSliders();
+  initQuietQuestion();
+  initLightNow();
+  initAvailabilityCalendar();
 }
 
 // ===== Ruhige Hintergrundmusik (assets/audio/hintergrund.mp3) =====
