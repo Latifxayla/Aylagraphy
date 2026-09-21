@@ -3088,88 +3088,42 @@ img {
     gap: 0.3rem;
   }
 }
-
-/* ===== Nur Laptop: beim Scrollen bleibt allein das AG stehen =====
-   Weißer Balken, Trennlinie und Menüpunkte verschwinden, sobald die Seite
-   gescrollt ist. Fährt die Maus in den Bereich der Leiste, kommt alles
-   zurück – sonst wäre die Navigation am Laptop nicht mehr erreichbar,
-   weil das Menü-Symbol erst ab 960 px abwärts eingeblendet wird.
-   Handy und Tablet bleiben unberührt. */
-@media (min-width: 961px) {
-  .nav--scrolled {
-    background: transparent;
-    border-bottom-color: transparent;
-    backdrop-filter: none;
-  }
-
-  .nav--scrolled .nav__links,
-  .nav--scrolled .nav__cta,
-  .nav--scrolled .nav__logo-text,
-  .nav--scrolled .nav__logo-divider {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-  }
-
-  /* Maus im Bereich der Leiste: alles wieder da */
-  .nav--scrolled:hover {
-    background: rgba(255, 255, 255, 0.98);
-    border-bottom-color: rgba(24, 63, 53, 0.18);
-    backdrop-filter: blur(8px);
-  }
-
-  .nav--scrolled:hover .nav__links,
-  .nav--scrolled:hover .nav__cta,
-  .nav--scrolled:hover .nav__logo-text,
-  .nav--scrolled:hover .nav__logo-divider {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Heller Schein hinter dem AG, damit es ohne Balken auf
-     unruhigem Untergrund lesbar bleibt */
-  .nav--scrolled .nav__logo-mark {
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9),
-                 0 0 18px rgba(255, 255, 255, 0.85);
-    transition: text-shadow 0.25s ease;
-  }
-
-  .nav--scrolled:hover .nav__logo-mark {
-    text-shadow: none;
-  }
-}
-
 /* „Die Idee“ sitzt jetzt im selben Abschnitt wie der Einstiegstext
    (siehe ueber-uns.html) und braucht deshalb eigenen Abstand nach oben. */
 .story__idea--lead {
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
 }
 
-/* ===== Extra 1: die leise Frage =====
-   Ein ruhiger Zwischenruf am Ende jeder Seite. Die Haarlinie zeichnet
-   sich beim Hereinscrollen selbst, danach steigt die Frage auf. */
-.quiet-question {
+/* ===== Extra 1: das leise Zitat =====
+   Ein ruhiger Gedanke am Ende jeder Seite. Die Haarlinie zeichnet sich
+   beim Hereinscrollen selbst, danach steigt das Zitat auf, zuletzt die
+   Quelle. */
+.quiet-quote {
   display: grid;
   justify-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   text-align: center;
   width: min(720px, calc(100% - 3rem));
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 5.5rem) 0;
 }
 
-.quiet-question__line {
+.quiet-quote__line {
   width: 0;
   height: 1px;
   background: var(--color-soft-deep);
   transition: width 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.quiet-question.is-visible .quiet-question__line {
+.quiet-quote.is-visible .quiet-quote__line {
   width: min(180px, 45%);
 }
 
-.quiet-question__text {
+.quiet-quote__line--below {
+  transition-delay: 0.5s;
+}
+
+.quiet-quote__text {
   font-family: var(--font-heading);
   font-style: italic;
   font-weight: 300;
@@ -3182,26 +3136,50 @@ img {
   transition: opacity 1.1s ease 0.3s, transform 1.1s ease 0.3s;
 }
 
-.quiet-question.is-visible .quiet-question__text {
+/* Anführungszeichen als Zierde – nicht im Text, damit Vorleseprogramme
+   sie nicht mitsprechen */
+.quiet-quote__text::before {
+  content: "\201E";
+}
+
+.quiet-quote__text::after {
+  content: "\201C";
+}
+
+.quiet-quote__source {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
+}
+
+.quiet-quote__source em {
+  font-style: italic;
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+
+.quiet-quote.is-visible .quiet-quote__text,
+.quiet-quote.is-visible .quiet-quote__source {
   opacity: 1;
   transform: none;
 }
 
-/* Zweite Linie spiegelt die erste, mit etwas Nachlauf */
-.quiet-question__line--below {
-  transition-delay: 0.5s;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .quiet-question__line,
-  .quiet-question__text {
+  .quiet-quote__line,
+  .quiet-quote__text,
+  .quiet-quote__source {
     transition: none;
   }
-  .quiet-question__text {
+  .quiet-quote__text,
+  .quiet-quote__source {
     opacity: 1;
     transform: none;
   }
-  .quiet-question__line {
+  .quiet-quote__line {
     width: min(180px, 45%);
   }
 }
@@ -3496,5 +3474,77 @@ img {
   .calendar__legend {
     gap: 0.9rem;
     font-size: 0.6rem;
+  }
+}
+
+/* ===== Musik-Knopf: einmaliger Hinweis beim ersten Besuch =====
+   Eine Beschriftung fährt links aus dem Knopf heraus, dazu ein ruhiger
+   Puls. Beides endet beim ersten Klick und kommt nicht wieder
+   (gemerkt in localStorage, siehe script.js). */
+.music-toggle__hint {
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  top: 50%;
+  white-space: nowrap;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--color-soft);
+  box-shadow: var(--shadow-faint);
+  backdrop-filter: blur(6px);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.music-toggle.is-hinting .music-toggle__hint {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Der Puls: ein Rahmen, der aus dem Knopf herauswächst und verblasst.
+   Eckig, passend zur übrigen Gestaltung der Seite. */
+.music-toggle::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-toggle.is-calling::before {
+  animation: music-call 2.8s ease-out infinite;
+}
+
+@keyframes music-call {
+  0%   { opacity: 0.4; transform: scale(0.94); }
+  65%  { opacity: 0;   transform: scale(1.22); }
+  100% { opacity: 0;   transform: scale(1.22); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle::before {
+    animation: none;
+  }
+  .music-toggle__hint {
+    transition: opacity 0.4s ease;
+    transform: translateY(-50%);
+  }
+  .music-toggle.is-hinting .music-toggle__hint {
+    transform: translateY(-50%);
+  }
+}
+
+/* Auf schmalen Displays soll die Beschriftung nicht über den Rand laufen */
+@media (max-width: 420px) {
+  .music-toggle__hint {
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+    padding: 0.4rem 0.6rem;
   }
 }

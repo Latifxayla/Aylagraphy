@@ -540,12 +540,12 @@ function initCompareSliders() {
 }
 
 // Alles, was pro Seite neu eingerichtet werden muss
-// ----- Extra: die leise Frage erscheint beim Hereinscrollen -----
-function initQuietQuestion() {
-  const frage = document.querySelector('.quiet-question');
-  if (!frage) return;
+// ----- Extra: das leise Zitat erscheint beim Hereinscrollen -----
+function initQuietQuote() {
+  const zitat = document.querySelector('.quiet-quote');
+  if (!zitat) return;
   if (!('IntersectionObserver' in window)) {
-    frage.classList.add('is-visible');
+    zitat.classList.add('is-visible');
     return;
   }
 
@@ -557,7 +557,7 @@ function initQuietQuestion() {
     });
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.25 });
 
-  observer.observe(frage);
+  observer.observe(zitat);
   onCleanup(() => observer.disconnect());
 }
 
@@ -720,7 +720,7 @@ function initPage() {
   initCircleJoin();
   initLegalDialogs();
   initCompareSliders();
-  initQuietQuestion();
+  initQuietQuote();
   initLightNow();
   initAvailabilityCalendar();
 }
@@ -740,7 +740,9 @@ function initBackgroundMusic() {
   button.type = 'button';
   button.className = 'music-toggle';
   button.setAttribute('aria-label', 'Musik abspielen');
-  button.innerHTML = '<span class="music-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>';
+  button.innerHTML =
+    '<span class="music-toggle__hint" aria-hidden="true">Mit Musik erleben</span>' +
+    '<span class="music-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>';
   document.body.appendChild(button);
   musicButton = button;
   audio.addEventListener('error', () => {
@@ -770,7 +772,40 @@ function initBackgroundMusic() {
     audio.play().then(() => setState(true)).catch(() => setState(false));
   }
 
+  // Einmal pro Besucher auf den Knopf aufmerksam machen: kurzer Hinweis
+  // plus ruhiger Puls. Beides endet beim ersten Klick und kommt nicht wieder.
+  let hinweisAn = null;
+  let hinweisAus = null;
+
+  function hinweisBeenden() {
+    clearTimeout(hinweisAn);
+    clearTimeout(hinweisAus);
+    button.classList.remove('is-hinting', 'is-calling');
+    try { localStorage.setItem('music-hint-seen', '1'); } catch (e) {}
+  }
+
+  function hinweisZeigen() {
+    let schonGesehen = false;
+    try { schonGesehen = localStorage.getItem('music-hint-seen') === '1'; } catch (e) {}
+    if (schonGesehen || wanted) return;
+
+    const ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    hinweisAn = setTimeout(() => {
+      button.classList.add('is-hinting');
+      if (!ruhig) button.classList.add('is-calling');
+      hinweisAus = setTimeout(() => {
+        button.classList.remove('is-hinting');
+        // Der Puls läuft noch ein Stück weiter, dann ist Ruhe.
+        hinweisAus = setTimeout(() => button.classList.remove('is-calling'), 6000);
+        try { localStorage.setItem('music-hint-seen', '1'); } catch (e) {}
+      }, 7000);
+    }, 3000);
+  }
+
+  hinweisZeigen();
+
   button.addEventListener('click', () => {
+    hinweisBeenden();
     wanted = audio.paused;
     if (wanted) play();
     else {
